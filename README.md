@@ -1,5 +1,5 @@
-Slides for my talk on surveydown at [Quant UX Con 2025](https://www.quantuxa.org/quant-ux-con/quant-ux-con-2025)
+Slides for my talk on surveydown at [GW OSCON 2026](https://ospo.gwu.edu/open-source-conference-gw-oscon)
 
-*surveydown: An Open-Source, Markdown-Based Platform for Reproducible and Programmable Surveys*
+*sdstudio: A Companion Package for Designing and Managing surveydown Surveys*
 
-Nov 05, 2025
+Mar 23, 2026
