@@ -2,9 +2,9 @@ project:
   type: website
   output-dir: _site
 
-pagetitle: "surveydown Quant UX Con"
-title: "`surveydown`<br><span style='font-size: 0.7em;'>An Open-Source, Markdown-Based Platform<br>for Reproducible and Programmable Surveys</span>"
-author: "<br>**Pingfan Hu**<br>George Washington University<br><br>Quant UX Con 2025"
+pagetitle: "sdstudio GW OSCON"
+title: "`sdstudio`<br><span style='font-size: 0.7em;'>A Companion Package for Designing<br>and Managing `surveydown` Surveys</span>"
+author: "<br>**Pingfan Hu**<br>George Washington University<br><br>GW OSCON 2026"
 
 format:
   revealjs:
@@ -14,14 +14,14 @@ format:
     slide-number: true
     embed-resources: false
     auto-stretch: false
-    footer: "<a href='http://pingfanhu.com'>Pingfan Hu</a> - <a href='https://www.quantuxa.org/quant-ux-con/quant-ux-con-2025'>Quant UX Con 2025</a>"
+    footer: "<a href='http://pingfanhu.com'>Pingfan Hu</a> - <a href='https://ospo.gwu.edu/open-source-conference-gw-oscon'>GW OSCON 2026</a>"
     preview-links: auto
     link-external-newwindow: true
     link-external-icon: false
     center-title-slide: true
     code-block-height: 650px
     title-slide-attributes:
-      data-background-image: figs/logo-surveydown.png
+      data-background-image: figs/logo-sdstudio.png
       data-background-size: 18%
       data-background-opacity: "1"
       data-background-position: right 20% center
