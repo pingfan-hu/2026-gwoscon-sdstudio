@@ -9,8 +9,7 @@ author: "<br>**Pingfan Hu**<br>George Washington University<br><br>GW OSCON 2026
 format:
   revealjs:
     smaller: false
-    theme: styles/theme.scss
-    css: styles/slides.css
+    theme: styles/slides.scss
     slide-number: true
     embed-resources: false
     auto-stretch: false
