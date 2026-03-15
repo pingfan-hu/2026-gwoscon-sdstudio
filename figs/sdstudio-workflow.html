@@ -45,6 +45,8 @@ body {
   border: 2px solid transparent;
   cursor: pointer;
   transition: background 0.18s, border-color 0.18s, transform 0.18s;
+  will-change: transform;
+  backface-visibility: hidden;
   flex: 1;
   height: 160px;
   user-select: none;
@@ -75,7 +77,7 @@ body {
   border-radius: 6px;
   white-space: nowrap;
 }
-.step-icon svg { width: 40px; height: 40px; stroke: #2C3E50; stroke-width: 1.5; }
+.step-icon svg { width: 40px; height: 40px; stroke: #2C3E50; stroke-width: 1.5; transform: translateZ(0); backface-visibility: hidden; }
 .step-title {
   font-size: 1em;
   font-weight: 700;
@@ -155,11 +157,16 @@ body {
 lucide.createIcons();
 
 document.querySelectorAll('.step').forEach(s => {
-  s.addEventListener('click', () => {
+  s.addEventListener('click', e => {
+    e.stopPropagation();
     const isActive = s.classList.contains('active');
     document.querySelectorAll('.step').forEach(x => x.classList.remove('active'));
     if (!isActive) s.classList.add('active');
   });
+});
+
+document.addEventListener('click', () => {
+  document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
 });
 </script>
 </body>
