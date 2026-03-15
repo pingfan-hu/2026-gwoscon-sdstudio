@@ -19,16 +19,9 @@ quarto preview    # Live preview with hot reload
 
 ---
 
-## Talk Content Outline
+## Done Condition
 
-1. **About the speaker** — sustainable transportation, choice modeling, research software
-2. **Problem** — WYSIWYG tools (Google Forms) lack reproducibility, version control, open-source
-3. **Solution** — surveys from code via `surveydown`
-4. **What is surveydown?** — R package rendering Quarto `.qmd` files into interactive surveys (Quarto + Shiny + PostgreSQL)
-5. **How it works** — `survey.qmd` defines pages/questions; `app.R` wires `sd_ui()` + `sd_server()`; `sd_db_connect()` for Supabase/PostgreSQL
-6. **Features** — 12 question types, conditional logic (`sd_show_if()`, skip/stop), Shiny-compatible (leaflet, LLMs)
-7. **sdstudio** — companion GUI launched via `sdstudio::launch()` with Build/Preview/Responses tabs
-8. **Call to action** — surveydown.org, GitHub repo, workshop by Dr. John Helveston
+`quarto render` exits 0 with no warnings.
 
 ---
 
