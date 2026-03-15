@@ -106,6 +106,15 @@ th { font-size: 24px; }
   }
 }
 
+@media (max-width: 500px) {
+  .reveal .slides section.custom-title-slide {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    height: 100% !important;
+  }
+}
+
 // === Slide Variants ===
 .light-centered {
   text-align: center;
