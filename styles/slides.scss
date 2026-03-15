@@ -223,6 +223,15 @@ th { font-size: 24px; }
   }
 }
 
+// === Color Utilities ===
+.teal   { color: $teal !important; }
+.purple { color: $purple !important; }
+.amber  { color: $amber !important; }
+.navy   { color: $navy !important; }
+
+// === Text Size Utilities ===
+.small  { font-size: 0.7em; }
+
 // === Image Utilities ===
 .round-image {
   border-radius: 50%;

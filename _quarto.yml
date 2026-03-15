@@ -3,7 +3,7 @@ project:
   output-dir: _site
 
 pagetitle: "sdstudio GW OSCON"
-title: "`sdstudio`<br><span style='font-size: 0.7em;'>A Companion Package for Designing<br>and Managing `surveydown` Surveys</span>"
+title: "`sdstudio`<br>[A Companion Package for Designing<br>and Managing `surveydown` Surveys]{.small}"
 author: "<br>**Pingfan Hu**<br>George Washington University<br><br>GW OSCON 2026"
 
 format:

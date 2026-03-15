@@ -1,82 +1,80 @@
-# Project Summary: sdstudio Talk — GW OSCON 2026
+# CLAUDE.md
 
-## Overview
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-This is a **Quarto Reveal.js** presentation for Pingfan Hu's talk at GW OSCON 2026 (March 23, 2026).
+## Project Overview
+
+Quarto Reveal.js presentation for Pingfan Hu's talk at GW OSCON 2026 (March 23, 2026).
 
 **Talk title:** *sdstudio: A Companion Package for Designing and Managing surveydown Surveys*
 
-**Speaker:** Pingfan Hu, PhD Candidate at George Washington University (supervised by Dr. John Helveston)
-
 ---
 
-## File Structure
+## Build Commands
 
-| File | Purpose |
-|------|---------|
-| `index.qmd` | Main slide deck — all slide content lives here |
-| `_quarto.yml` | Quarto project config: title, author, Reveal.js theme/CSS settings |
-| `scripts.R` | R helper functions that generate inline code blocks for slides |
-| `styles/theme.scss` | SCSS theme variables (fonts, colors, heading sizes) |
-| `styles/slides.css` | Additional CSS for custom slide classes |
-| `README.md` | Brief description of the talk and date |
-| `.github/workflows/quarto-publish.yml` | CI/CD for publishing the site |
-| `figs/` | All images and GIFs used in slides |
-| `_site/` | Rendered output (auto-generated, do not edit) |
-| `.quarto/` | Quarto cache/freeze files (auto-generated) |
+```bash
+quarto render     # Build to _site/
+quarto preview    # Live preview with hot reload
+```
 
 ---
 
 ## Talk Content Outline
 
-The slides walk through the `surveydown` R package and its companion `sdstudio`:
-
-1. **About the speaker** — Pingfan Hu's research: sustainable transportation, choice modeling, research software
-2. **Problem** — WYSIWYG survey tools (e.g., Google Forms) lack reproducibility, version control, features, and open-source
-3. **Solution** — Make surveys from code using `surveydown`
-4. **What is surveydown?** — An R package that renders Quarto `.qmd` files into interactive surveys
-   - Built on Quarto + R Shiny for interactivity
-   - Uses PostgreSQL (via Supabase) for data storage
-5. **How surveydown works**
-   - `survey.qmd` — Quarto doc defining pages and questions
-   - `app.R` — Shiny app wiring (`sd_ui()` + `sd_server()`)
-   - `sd_db_connect()` for database connection
-6. **Features**
-   - 12 built-in question types (`text`, `mc`, `mc_buttons`, `slider`, `date`, etc.)
-   - Conditional logic: `sd_show_if()`, skip logic, stop logic
-   - Shiny-compatible (leaflet maps, LLM integration, etc.)
-7. **What's next: `sdstudio`**
-   - Companion package launched via `sdstudio::launch()`
-   - GUI for building surveys, previewing, and managing data
-8. **Call to action** — GitHub repo, docs at surveydown.org, workshop by Dr. John Helveston
+1. **About the speaker** — sustainable transportation, choice modeling, research software
+2. **Problem** — WYSIWYG tools (Google Forms) lack reproducibility, version control, open-source
+3. **Solution** — surveys from code via `surveydown`
+4. **What is surveydown?** — R package rendering Quarto `.qmd` files into interactive surveys (Quarto + Shiny + PostgreSQL)
+5. **How it works** — `survey.qmd` defines pages/questions; `app.R` wires `sd_ui()` + `sd_server()`; `sd_db_connect()` for Supabase/PostgreSQL
+6. **Features** — 12 question types, conditional logic (`sd_show_if()`, skip/stop), Shiny-compatible (leaflet, LLMs)
+7. **sdstudio** — companion GUI launched via `sdstudio::launch()` with Build/Preview/Responses tabs
+8. **Call to action** — surveydown.org, GitHub repo, workshop by Dr. John Helveston
 
 ---
 
 ## Key Technical Details
 
-### Quarto Config (`_quarto.yml`)
-- Output: `revealjs` format, rendered to `_site/`
-- Theme: `styles/theme.scss` + `styles/slides.css`
-- Footer links to speaker site and conference page
-- Title slide background: `figs/logo-sdstudio.png`
+### Styling (`styles/slides.scss`)
 
-### Custom Theme (`styles/theme.scss`)
-- Font: Palatino Linotype (serif)
-- Colors: warm background `#F8F7F0`, brown text `#564232`, purple headings/links `#5654A2`, teal inline code `#2C8475`
-- Code blocks: light gray background `#EDEDED`, small font (0.6em)
+Single SCSS file (no separate CSS file). Key variables:
+- **Font:** TsangerJinKai (serif-style), Maple Mono for code
+- **Colors:** background `#F8F7F0`, text `#564232`, purple headings/links `#5654A2`, teal code `#2C8475`, amber `#FFB84D`
+- **Code blocks:** background `#EDEDED`, font-size `0.6em`
 
-### scripts.R Helper Functions
-These R functions generate fenced code blocks for slides (used with `#| results: 'asis'`):
-- `surveycode(highlights)` — Shows a sample `survey.qmd`
-- `appcode_short(highlights)` / `appcode_long(highlights)` — Shows sample `app.R`
-- `question_text()`, `question_mc()`, `question_mc_buttons()`, `question_slider_numeric()` — Question type examples
-- `show_if_survey()` / `show_if_app()` — Conditional logic examples
-- `quarto_r_html()` / `quarto_python_pdf()` — Generic Quarto usage examples
-- All support optional `highlights` parameter (line ranges like `"1-5"` or `"3,7"`) for code highlighting
+### Custom Slide Classes
 
-### Build Command
-```bash
-quarto render
-# or
-quarto preview
-```
+Apply to slide headers as `.classname`:
+
+| Class | Effect |
+|-------|--------|
+| `.dark-centered` | Navy background, light text, centered — for section dividers |
+| `.light-centered` | Centered text on light background |
+| `.black-centered` | Black background, light text |
+| `.purple-border` | 2px purple border (for images/GIFs) |
+| `.round-image` | Circular crop for headshots |
+| `.bubble-left` | Speech bubble pointing left (absolute positioned) |
+| `.bubble-top` | Speech bubble pointing up (absolute positioned) |
+| `.four-by-three-grid` | 4×3 CSS grid layout (used for question type list) |
+| `.grid-container` | Centered flexbox grid for feature boxes |
+| `.centered-container` | Bordered orange-text box (for feature labels) |
+| `.img-middle` | Vertically centers inline images |
+
+### `scripts.R` Helper Functions
+
+All slide code examples are generated by R functions in `scripts.R` using `#| results: 'asis'` chunks. All accept an optional `highlights` parameter (e.g., `"1-5"`, `"3,7"`) for line highlighting.
+
+| Function | Generates |
+|----------|-----------|
+| `surveycode(highlights)` | Sample `survey.qmd` with pages and `sd_question()` |
+| `appcode_short(highlights)` | Minimal `app.R` (no DB) |
+| `appcode_long(highlights)` | Full `app.R` with `sd_db_connect()` |
+| `question_text()` | `sd_question(type = "text", ...)` example |
+| `question_mc()` | `sd_question(type = "mc", ...)` example |
+| `question_mc_buttons()` | `sd_question(type = "mc_buttons", ...)` example |
+| `question_slider_numeric()` | `sd_question(type = "slider_numeric", ...)` example |
+| `show_if_survey()` | `survey.qmd` side of conditional showing |
+| `show_if_app()` | `app.R` side with `sd_show_if()` |
+| `quarto_r_html()` | Generic Quarto R→HTML example |
+| `quarto_python_pdf()` | Generic Quarto Python→PDF example |
+
+The `fence_start()` internal helper converts range strings (`"1-5"` → `"1,2,3,4,5"`) for Reveal.js code highlighting.
