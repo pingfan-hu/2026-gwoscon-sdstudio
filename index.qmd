@@ -815,6 +815,10 @@ Condition ~ Target
 
 ## Introducing `sdstudio`! {.dark-centered .center style="font-size: 1.2em;"}
 
+## [Studio]{.amber} Workflow {.dark-centered .center}
+
+<iframe src="figs/sdstudio-workflow.html" style="width:100%; height:420px; border:none;"></iframe>
+
 ## Launch with a simple command {.light-centered .center}
 <br>
 
@@ -822,25 +826,29 @@ Condition ~ Target
 `sdstudio::launch()`
 :::
 
-## [Studio]{.amber} Workflow {.dark-centered .center}
+## [Landing]{.amber} Page {.dark-centered .center}
 
-<iframe src="figs/sdstudio-workflow.html" style="width:100%; height:420px; border:none;"></iframe>
+![](figs/studio-landing-page.png){fig-align="center" width=100%}
 
-## Start with a Template {.dark-centered .center}
+## Start with a [Template]{.amber} {.dark-centered .center}
 
-(Image here)
+![](figs/studio-template.gif){fig-align="center" width=100%}
 
-## The [Build]{.amber} Tab {.light-centered .center}
+## Choose Your [Directory]{.amber} {.dark-centered .center}
 
-![](figs/sdstudio-build.gif){fig-align="center" width=90% .purple-border}
+![](figs/studio-directory.gif){fig-align="center" width=100%}
 
-## The [Preview]{.amber} Tab {.light-centered .center}
+## The [Build]{.amber} Tab {.dark-centered .center}
 
-![](figs/sdstudio-preview.gif){fig-align="center" width=90% .purple-border}
+![](figs/studio-build.gif){fig-align="center" width=100%}
 
-## The [Responses]{.amber} Tab {.light-centered .center}
+## The [Preview]{.amber} Tab {.dark-centered .center}
 
-![](figs/sdstudio-data.gif){fig-align="center" width=90% .purple-border}
+![](figs/sdstudio-preview.gif){fig-align="center" width=100%}
+
+## The [Responses]{.amber} Tab {.dark-centered .center}
+
+![](figs/sdstudio-data.gif){fig-align="center" width=100%}
 
 ## [Studio]{.amber} Features {.dark-centered .center}
 
