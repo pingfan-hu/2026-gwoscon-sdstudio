@@ -12,23 +12,17 @@ source("scripts.R")
 :::
 
 ::: {.column width="62%"}
-<div style="margin-bottom: -1em;">
-- My name is **Pingfan Hu**, a PhD Candidate at George Washington University, supervised by Dr John Helveston.
-- Graduating in **Spring 2025**.
-</div>
+- **Pingfan Hu**, PhD Candidate at George Washington University, advised by Dr John Helveston.
 
-<div style="margin-bottom: -1em;">
+- Research field: Sustainable transportation
+
 - Research focuses:
   <div style="margin-left: 1em;">
-    1. Sustainable transportation
-    2. Choice modeling & data analysis
-    3. Research software development
+    1. Open-source software development 
+    2. Data science and choice modeling
   </div>
-</div>
 
-<div style="margin-bottom: -1em;">
 - For more infomation, visit [**pingfanhu.com**](http://pingfanhu.com)
-</div>
 :::
 :::
 
@@ -39,6 +33,8 @@ My research focuses on EV grid integration, consumer behavior studies on transpo
 
 For more information, you can visit my website at pingfanhu.com.
 :::
+
+## Recap of `surveydown` {.dark-centered .center}
 
 ## I try to figure out what people want... {.black-centered .center}
 
@@ -817,27 +813,50 @@ Condition ~ Target
 
 ![](figs/llm.gif){fig-align="center" width=80% .purple-border}
 
-## What's next? {.dark-centered .center style="font-size: 1.2em;"}
+## Introducing `sdstudio`! {.dark-centered .center style="font-size: 1.2em;"}
 
-## Try out the companion [`sdstudio`](https://github.com/surveydown-dev/sdstudio/) package: {.light-centered .center}
-
+## Launch with a simple command {.light-centered .center}
 <br>
 
 ::: {.centered-container style="width: 500px;"}
 `sdstudio::launch()`
 :::
 
-##
+## <span style="color: #FFB84D;">Studio</span> Workflow {.dark-centered .center}
 
-![](figs/sdstudio-build.gif){fig-align="center" width=100% .purple-border}
+(Image here)
 
-##
+## Start with a Template {.dark-centered .center}
 
-![](figs/sdstudio-preview.gif){fig-align="center" width=100% .purple-border}
+(Image here)
 
-##
+## The <span style="color: #FFB84D;">Build</span> Tab {.light-centered .center}
 
-![](figs/sdstudio-data.gif){fig-align="center" width=100% .purple-border}
+![](figs/sdstudio-build.gif){fig-align="center" width=90% .purple-border}
+
+## The <span style="color: #FFB84D;">Preview</span> Tab {.light-centered .center}
+
+![](figs/sdstudio-preview.gif){fig-align="center" width=90% .purple-border}
+
+## The <span style="color: #FFB84D;">Responses</span> Tab {.light-centered .center}
+
+![](figs/sdstudio-data.gif){fig-align="center" width=90% .purple-border}
+
+## <span style="color: #FFB84D;">Studio</span> Features {.dark-centered .center}
+
+## <span style="color: #FFB84D;">GUI</span> Operations {.light-centered .center}
+
+(Image here)
+
+## Side-by-side <span style="color: #FFB84D;">Code Scripts</span> {.light-centered .center}
+
+(Image here)
+
+## <span style="color: #FFB84D;">Modes</span> and <span style="color: #FFB84D;">Views</span> {.light-centered .center}
+
+Local Mode vs Database Mode
+
+Desktop View vs Mobile View
 
 ## With great power comes great responsibility. {.dark-centered .center style="font-size: 1.2em;"}
 
@@ -900,18 +919,3 @@ Condition ~ Target
 ![](figs/qr-surveydown-doc.svg){fig-align="center" width=80% .purple-border}
 
 :::
-
-## One more thing... {.dark-centered .center style="font-size: 1.2em;"}
-
-## Workshop by Dr John Helveston Tomorrow {.light-centered .center}
-
-<br>
-<br>
-
-::: {.centered-container style="width: 85%;"}
-[jhelvy.github.io/2025-qux-surveydown-workshop/](https://jhelvy.github.io/2025-qux-surveydown-workshop/)
-:::
-
-<br>
-
-Thursday Nov 6, **2:00 PM** UTC−5, Eastern Time (U.S.)
