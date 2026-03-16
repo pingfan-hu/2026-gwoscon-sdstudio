@@ -834,6 +834,10 @@ Condition ~ Target
 
 ![](figs/studio-template.gif){fig-align="center" width=100%}
 
+## [surveydown.org/templates](https://surveydown.org/templates) {.light-centered .center}
+
+![](figs/surveydown-templates.png){fig-align="center" width=100%}
+
 ## Choose Your [Directory]{.amber} {.dark-centered .center}
 
 ![](figs/studio-directory.gif){fig-align="center" width=100%}
@@ -844,11 +848,15 @@ Condition ~ Target
 
 ## The [Preview]{.amber} Tab {.dark-centered .center}
 
-![](figs/sdstudio-preview.gif){fig-align="center" width=100%}
+![](figs/studio-preview.gif){fig-align="center" width=100%}
 
-## The [Responses]{.amber} Tab {.dark-centered .center}
+## The [Responses]{.amber} Tab - [Local]{.amber} Mode {.dark-centered .center}
 
-![](figs/sdstudio-data.gif){fig-align="center" width=100%}
+![](figs/studio-responses-local.gif){fig-align="center" width=100%}
+
+## The [Responses]{.amber} Tab - [DB]{.amber} Mode {.dark-centered .center}
+
+![](figs/studio-responses-db.gif){fig-align="center" width=100%}
 
 ## [Studio]{.amber} Features {.dark-centered .center}
 
@@ -865,6 +873,16 @@ Condition ~ Target
 Local Mode vs Database Mode
 
 Desktop View vs Mobile View
+
+## Accessibility
+
+Survey preview
+
+Response dashboard
+
+PostgreSQL connection
+
+Data file view & download
 
 ## With great power comes great responsibility. {.dark-centered .center style="font-size: 1.2em;"}
 
