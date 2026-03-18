@@ -850,31 +850,31 @@ Condition ~ Target
 
 ![](figs/studio-preview.gif){fig-align="center" width=100%}
 
-## The [Responses]{.amber} Tab - [Local]{.amber} Mode {.dark-centered .center}
-
-![](figs/studio-responses-local.gif){fig-align="center" width=100%}
-
-## The [Responses]{.amber} Tab - [DB]{.amber} Mode {.dark-centered .center}
+## The [Responses]{.amber} Tab {.dark-centered .center}
 
 ![](figs/studio-responses-db.gif){fig-align="center" width=100%}
 
-## [Studio]{.amber} Features {.dark-centered .center}
+## [Studio]{.amber} Features {.light-centered .center}
 
-## [GUI]{.amber} Operations {.light-centered .center}
-
-(Image here)
-
-## Side-by-side [Code Scripts]{.amber} {.light-centered .center}
+## [Visual]{.amber} Editing {.dark-centered .center}
 
 (Image here)
 
-## [Modes]{.amber} and [Views]{.amber} {.light-centered .center}
+## [Script]{.amber} Editing {.dark-centered .center}
 
-Local Mode vs Database Mode
+(Image here)
 
-Desktop View vs Mobile View
+## Desktop and Mobile [Views]{.amber} {.dark-centered .center}
 
-## Accessibility
+(Image here)
+
+## Local and Database [Modes]{.amber} {.dark-centered .center}
+
+(Image here)
+
+## Using `sdstudio`, You can... {.light-centered .center}
+
+(Use Claude code to generate a chart showing the features of `sdstudio`)
 
 Survey preview
 
@@ -884,14 +884,16 @@ PostgreSQL connection
 
 Data file view & download
 
-## With great power comes great responsibility. {.dark-centered .center style="font-size: 1.2em;"}
+## `surveydown` + `sdstudio` {.dark-centered .center style="font-size: 1.2em;"}
+
+(Content here)
 
 ## Ways to help: {.light-centered .center}
 
 <br>
 
 ::: {.centered-container style="width: 85%;"}
-[github.com/surveydown-dev/surveydown/](https://github.com/surveydown-dev/surveydown/)
+[github.com/surveydown-dev/sdstudio/](https://github.com/surveydown-dev/sdstudio/)
 :::
 
 <br>
