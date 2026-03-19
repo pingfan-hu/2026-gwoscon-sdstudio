@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+@font-face {
+  font-family: 'TsangerJinKai';
+  src: url('https://raw.githubusercontent.com/pingfan-hu/resources/main/fonts/TsangerJinKai02-W04.ttf') format('truetype');
+}
+
+body {
+  background: transparent;
+  font-family: 'TsangerJinKai', serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 16px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #F8F7F0;
+  border: 2px solid #5654A2;
+  border-radius: 14px;
+  padding: 28px 24px;
+  width: 100%;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px 14px;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: background 0.18s, border-color 0.18s, transform 0.18s;
+  will-change: transform;
+  backface-visibility: hidden;
+  flex: 1;
+  height: 160px;
+  user-select: none;
+  gap: 10px;
+  position: relative;
+  margin-top: 20px;
+}
+
+.card-gui {
+  background: rgba(255, 184, 77, 0.12);
+}
+.card-gui:hover, .card-gui.active {
+  background: rgba(255, 184, 77, 0.25);
+  border-color: #FFB84D;
+  transform: translateY(-3px);
+}
+
+.card-script {
+  background: rgba(44, 132, 117, 0.10);
+}
+.card-script:hover, .card-script.active {
+  background: rgba(44, 132, 117, 0.22);
+  border-color: #2C8475;
+  transform: translateY(-3px);
+}
+
+.card-label {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5em;
+  font-weight: 700;
+  padding: 3px 20px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+.label-gui    { background: #FFB84D; color: #564232; }
+.label-script { background: #2C8475; color: #F8F7F0; }
+
+.card-icon svg { width: 44px; height: 44px; stroke-width: 1.5; transform: translateZ(0); backface-visibility: hidden; }
+.card-gui    .card-icon svg { stroke: #C4881A; }
+.card-script .card-icon svg { stroke: #2C8475; }
+
+.card-title {
+  font-size: 1em;
+  font-weight: 700;
+  color: #564232;
+  line-height: 1.3;
+}
+
+.card-desc {
+  font-size: 0.8em;
+  color: #564232;
+  opacity: 0.65;
+  line-height: 1.4;
+}
+
+.divider {
+  font-size: 1.4em;
+  font-weight: 700;
+  color: #5654A2;
+  opacity: 0.45;
+  padding: 0 2rem;
+  flex-shrink: 0;
+}
+</style>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <div class="card card-gui">
+    <div class="card-label label-gui">GUI</div>
+    <div class="card-icon"><i data-lucide="layout-panel-left"></i></div>
+    <div class="card-title">Point & Click</div>
+    <div class="card-desc">No coding required</div>
+  </div>
+
+  <div class="divider">or</div>
+
+  <div class="card card-script">
+    <div class="card-label label-script">Script</div>
+    <div class="card-icon"><i data-lucide="file-code-2"></i></div>
+    <div class="card-title">Edit Directly</div>
+    <div class="card-desc">Full code control</div>
+  </div>
+</div>
+
+<script>
+lucide.createIcons();
+
+document.querySelectorAll('.card').forEach(c => {
+  c.addEventListener('click', e => {
+    e.stopPropagation();
+    const isActive = c.classList.contains('active');
+    document.querySelectorAll('.card').forEach(x => x.classList.remove('active'));
+    if (!isActive) c.classList.add('active');
+  });
+});
+
+document.addEventListener('click', () => {
+  document.querySelectorAll('.card').forEach(c => c.classList.remove('active'));
+});
+</script>
+</body>
+</html>

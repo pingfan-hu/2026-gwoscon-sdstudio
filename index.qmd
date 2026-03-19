@@ -817,7 +817,7 @@ Condition ~ Target
 
 ## [Studio]{.amber} Workflow {.dark-centered .center}
 
-<iframe src="figs/sdstudio-workflow.html" style="width:100%; height:420px; border:none;"></iframe>
+<iframe src="figs/studio-workflow.html" style="width:100%; height:420px; border:none;"></iframe>
 
 ## Launch with a simple command {.light-centered .center}
 <br>
@@ -844,33 +844,93 @@ Condition ~ Target
 
 ## The [Build]{.amber} Tab {.dark-centered .center}
 
-![](figs/studio-build.gif){fig-align="center" width=100%}
+![](figs/studio-build.png){fig-align="center" width=100%}
 
 ## The [Preview]{.amber} Tab {.dark-centered .center}
 
-![](figs/studio-preview.gif){fig-align="center" width=100%}
+![](figs/studio-preview.png){fig-align="center" width=100%}
 
 ## The [Responses]{.amber} Tab {.dark-centered .center}
 
-![](figs/studio-responses-db.gif){fig-align="center" width=100%}
+![](figs/studio-responses-1.png){fig-align="center" width=100%}
 
-## [Studio]{.amber} Features {.light-centered .center}
+## The [Responses]{.amber} Tab - Continued {.dark-centered .center}
 
-## [Visual]{.amber} Editing {.dark-centered .center}
+![](figs/studio-responses-2.png){fig-align="center" width=100%}
 
-(Image here)
+## [Studio]{.amber} Features {.light-centered .center style="font-size: 1.2em;"}
+
+## Self-explaining Icons {.dark-centered .center}
+
+<iframe src="figs/studio-icons.html" style="width:100%; height:280px; border:none;"></iframe>
+
+## Editing {.light-centered .center style="font-size: 1.2em;"}
+
+<iframe src="figs/studio-editing.html" style="width:100%; height:280px; border:none;"></iframe>
+
+## [GUI]{.amber} - Toggling {.dark-centered .center}
+
+![](figs/studio-features-gui-1.gif){fig-align="center" width=100%}
+
+## [GUI]{.amber} - Content Editing {.dark-centered .center}
+
+![](figs/studio-features-gui-2.gif){fig-align="center" width=100%}
+
+## [GUI]{.amber} - Content Addition {.dark-centered .center}
+
+![](figs/studio-features-gui-3.gif){fig-align="center" width=100%}
+
+## [GUI]{.amber} - Page Addition {.dark-centered .center}
+
+![](figs/studio-features-gui-4.gif){fig-align="center" width=100%}
+
+## [GUI]{.amber} - Page Relocation {.dark-centered .center}
+
+![](figs/studio-features-gui-5.gif){fig-align="center" width=100%}
+
+## [GUI]{.amber} - Content Relocation {.dark-centered .center}
+
+![](figs/studio-features-gui-6.gif){fig-align="center" width=100%}
 
 ## [Script]{.amber} Editing {.dark-centered .center}
 
-(Image here)
+![](figs/studio-features-script.gif){fig-align="center" width=100%}
+
+## Instant Preview {.dark-centered .center}
+
+![](figs/studio-features-preview.gif){fig-align="center" width=100%}
+
+## Views {.light-centered .center style="font-size: 1.2em;"}
+
+<iframe src="figs/studio-views.html" style="width:100%; height:280px; border:none;"></iframe>
 
 ## Desktop and Mobile [Views]{.amber} {.dark-centered .center}
 
-(Image here)
+![](figs/studio-features-views.gif){fig-align="center" width=100%}
 
-## Local and Database [Modes]{.amber} {.dark-centered .center}
+## Responses {.light-centered .center style="font-size: 1.2em;"}
 
-(Image here)
+<iframe src="figs/studio-responses.html" style="width:100%; height:280px; border:none;"></iframe>
+
+## Local [Responses]{.amber} {.dark-centered .center}
+
+![](figs/studio-features-responses-1.png){fig-align="center" width=100%}
+
+## Database [Responses]{.amber} {.dark-centered .center}
+
+![](figs/studio-features-responses-2.png){fig-align="center" width=100%}
+
+## Database [Responses]{.amber} {.dark-centered .center}
+
+![](figs/studio-features-responses-3.png){fig-align="center" width=100%}
+
+## Database [Responses]{.amber} {.dark-centered .center}
+
+![](figs/studio-features-responses-4.png){fig-align="center" width=100%}
+
+## Database [Responses]{.amber} {.dark-centered .center}
+
+![](figs/studio-features-responses-5.png){fig-align="center" width=100%}
 
 ## Using `sdstudio`, You can... {.light-centered .center}
 

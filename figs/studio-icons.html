@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+@font-face {
+  font-family: 'TsangerJinKai';
+  src: url('https://raw.githubusercontent.com/pingfan-hu/resources/main/fonts/TsangerJinKai02-W04.ttf') format('truetype');
+}
+
+body {
+  background: transparent;
+  font-family: 'TsangerJinKai', serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 16px;
+}
+
+.container {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  background: #F8F7F0;
+  border: 2px solid #5654A2;
+  border-radius: 14px;
+  padding: 28px 32px;
+  width: 100%;
+  gap: 0;
+}
+
+/* ── Group ── */
+.group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+}
+
+.group-label {
+  font-size: 1.2em;
+  font-weight: 700;
+  color: #F8F7F0;
+  padding: 3px 18px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+.label-build    { background: #D4785A; }
+.label-preview  { background: #2C8475; }
+.label-control  { background: #2C8475; }
+
+.icons-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+/* ── Icon Button ── */
+.icon-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 10px;
+  border: 2.5px solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s, background 0.15s, border-color 0.15s;
+  user-select: none;
+  flex-shrink: 0;
+}
+.icon-btn:hover  { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.18); }
+.icon-btn:active { transform: translateY(0); }
+
+.green-outline:hover  { background: #4A9B5F; border-color: #4A9B5F; }
+.green-outline:hover  .btn-text { color: #F8F7F0; }
+.green-outline:hover  svg       { stroke: #F8F7F0; }
+
+.blue-outline:hover   { background: #3A7DC9; border-color: #3A7DC9; }
+.blue-outline:hover   .btn-text { color: #F8F7F0; }
+.blue-outline:hover   svg       { stroke: #F8F7F0; }
+
+.red-outline:hover    { background: #C0392B; border-color: #C0392B; }
+.red-outline:hover    svg       { stroke: #F8F7F0; }
+
+.amber-outline:hover  { background: #FFB84D; border-color: #FFB84D; }
+.amber-outline:hover  svg       { stroke: #564232; }
+
+.icon-btn svg { width: 26px; height: 26px; stroke-width: 2; transform: translateZ(0); transition: stroke 0.15s; }
+
+.btn-text {
+  font-size: 1.3em;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  transition: color 0.15s;
+}
+
+/* Variants */
+.green-outline  { border-color: #4A9B5F; background: rgba(74,155,95,0.10); }
+.green-outline  .btn-text { color: #4A9B5F; }
+.green-outline  svg       { stroke: #4A9B5F; }
+
+.blue-outline   { border-color: #3A7DC9; background: rgba(58,125,201,0.10); }
+.blue-outline   .btn-text { color: #3A7DC9; }
+.blue-outline   svg       { stroke: #3A7DC9; }
+
+.blue-filled    { border-color: #3A7DC9; background: #3A7DC9; }
+.blue-filled    svg       { stroke: #F8F7F0; }
+
+.red-outline    { border-color: #C0392B; background: rgba(192,57,43,0.10); }
+.red-outline    svg       { stroke: #C0392B; }
+
+.amber-outline  { border-color: #FFB84D; background: rgba(255,184,77,0.10); }
+.amber-outline  svg       { stroke: #C4881A; }
+
+/* ── Icon labels ── */
+.icon-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+.icon-label {
+  font-size: 0.72em;
+  color: #564232;
+  opacity: 0.70;
+  white-space: nowrap;
+}
+
+/* ── Separator between icon groups ── */
+.sep-pipe {
+  font-size: 1.8em;
+  color: #5654A2;
+  opacity: 0.25;
+  padding: 0 2px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+}
+
+/* ── Divider between the two groups ── */
+.group-divider {
+  width: 2px;
+  background: rgba(86, 84, 162, 0.18);
+  border-radius: 2px;
+  margin: 0 28px;
+  align-self: stretch;
+}
+</style>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Editing group -->
+  <div class="group">
+    <span class="group-label label-build">Editing</span>
+    <div class="icons-row">
+
+      <div class="icon-wrap">
+        <div class="icon-btn green-outline"><span class="btn-text">+T</span></div>
+        <span class="icon-label">Add Texts</span>
+      </div>
+
+      <div class="icon-wrap">
+        <div class="icon-btn blue-outline"><span class="btn-text">+Q</span></div>
+        <span class="icon-label">Add Question</span>
+      </div>
+
+      <div class="sep-pipe">|</div>
+
+      <div class="icon-wrap">
+        <div class="icon-btn blue-outline"><i data-lucide="pencil-line"></i></div>
+        <span class="icon-label">Edit</span>
+      </div>
+
+      <div class="icon-wrap">
+        <div class="icon-btn red-outline"><i data-lucide="trash-2"></i></div>
+        <span class="icon-label">Delete</span>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="group-divider"></div>
+
+  <!-- Controlling group -->
+  <div class="group">
+    <span class="group-label label-control">Controlling</span>
+    <div class="icons-row">
+
+      <div class="icon-wrap">
+        <div class="icon-btn green-outline"><i data-lucide="refresh-cw"></i></div>
+        <span class="icon-label">Reload</span>
+      </div>
+
+      <div class="icon-wrap">
+        <div class="icon-btn blue-outline"><i data-lucide="monitor"></i></div>
+        <span class="icon-label">Desktop</span>
+      </div>
+
+      <div class="icon-wrap">
+        <div class="icon-btn blue-outline"><i data-lucide="smartphone"></i></div>
+        <span class="icon-label">Mobile</span>
+      </div>
+
+      <div class="icon-wrap">
+        <div class="icon-btn amber-outline"><i data-lucide="laptop"></i></div>
+        <span class="icon-label">Local</span>
+      </div>
+
+      <div class="icon-wrap">
+        <div class="icon-btn blue-outline"><i data-lucide="cloud"></i></div>
+        <span class="icon-label">Database</span>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<script>
+lucide.createIcons();
+</script>
+</body>
+</html>

@@ -42,6 +42,12 @@ $amber:           #FFB84D;
 $navy:            #2C3E50;
 $light-bg:        #F8F7F0;
 $bubble-bg:       #DFE4FF;
+$coral:           #D45F47;
+$rose:            #B5476A;
+$sage:            #4A7A5A;
+$slate:           #5A6B80;
+$gold:            #C4881A;
+$blue:            #3A7DC9;
 
 // === Fonts ===
 @import url('https://cdn.jsdelivr.net/npm/@fontsource/maple-mono@5.2.5/index.min.css');
@@ -237,6 +243,12 @@ th { font-size: 24px; }
 .purple { color: $purple !important; }
 .amber  { color: $amber !important; }
 .navy   { color: $navy !important; }
+.coral  { color: $coral !important; }
+.rose   { color: $rose !important; }
+.sage   { color: $sage !important; }
+.slate  { color: $slate !important; }
+.gold   { color: $gold !important; }
+.blue   { color: $blue !important; }
 
 // === Text Size Utilities ===
 .small  { font-size: 0.7em; }

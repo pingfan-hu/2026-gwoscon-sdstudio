@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+@font-face {
+  font-family: 'TsangerJinKai';
+  src: url('https://raw.githubusercontent.com/pingfan-hu/resources/main/fonts/TsangerJinKai02-W04.ttf') format('truetype');
+}
+
+body {
+  background: transparent;
+  font-family: 'TsangerJinKai', serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 16px;
+}
+
+.flowchart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  background: #F8F7F0;
+  border: 2px solid #5654A2;
+  border-radius: 14px;
+  padding: 28px 24px;
+  width: 100%;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 16px 14px;
+  border-radius: 10px;
+  background: rgba(86, 84, 162, 0.08);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: background 0.18s, border-color 0.18s, transform 0.18s;
+  will-change: transform;
+  backface-visibility: hidden;
+  flex: 1;
+  height: 160px;
+  user-select: none;
+  gap: 8px;
+  position: relative;
+  margin-top: 20px;
+}
+.step:hover {
+  background: rgba(86, 84, 162, 0.15);
+  transform: translateY(-3px);
+}
+.step.active {
+  background: rgba(86, 84, 162, 0.18);
+  border-color: #5654A2;
+  transform: translateY(-3px);
+}
+
+.step-num {
+  position: absolute;
+  top: -22px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.2em;
+  font-weight: 700;
+  color: #F8F7F0;
+  background: #5654A2;
+  padding: 4px 16px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+.step-icon svg { width: 40px; height: 40px; stroke: #2C3E50; stroke-width: 1.5; transform: translateZ(0); backface-visibility: hidden; }
+.step-title {
+  font-size: 1em;
+  font-weight: 700;
+  color: #564232;
+  line-height: 1.3;
+}
+.badge {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.75em;
+  font-weight: 700;
+  padding: 2px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+.badge-build     { background: #D4785A; color: #F8F7F0; }
+.badge-preview   { background: #2C8475; color: #F8F7F0; }
+.badge-responses { background: #FFB84D; color: #564232; }
+
+.arr {
+  color: #5654A2;
+  font-size: 1.6em;
+  padding: 0 6px;
+  flex-shrink: 0;
+  opacity: 0.6;
+}
+</style>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+
+<div class="flowchart">
+  <div class="step" data-idx="0">
+    <div class="step-num">1</div>
+    <div class="step-icon"><i data-lucide="folder-open"></i></div>
+    <div class="step-title">Select Directory</div>
+  </div>
+  <div class="arr">→</div>
+  <div class="step" data-idx="1">
+    <div class="step-num">2</div>
+    <div class="step-icon"><i data-lucide="layout-template"></i></div>
+    <div class="step-title">Pick a Template</div>
+  </div>
+  <div class="arr">→</div>
+  <div class="step" data-idx="2">
+    <div class="step-num">3</div>
+    <div class="step-icon"><i data-lucide="pencil-line"></i></div>
+    <div class="step-title">Build Survey</div>
+    <span class="badge badge-build">Build</span>
+  </div>
+  <div class="arr">→</div>
+  <div class="step" data-idx="3">
+    <div class="step-num">4</div>
+    <div class="step-icon"><i data-lucide="eye"></i></div>
+    <div class="step-title">Preview Survey</div>
+    <span class="badge badge-preview">Preview</span>
+  </div>
+  <div class="arr">→</div>
+  <div class="step" data-idx="4">
+    <div class="step-num">5</div>
+    <div class="step-icon"><i data-lucide="database"></i></div>
+    <div class="step-title">Set Up Connection</div>
+    <span class="badge badge-responses">Responses</span>
+  </div>
+  <div class="arr">→</div>
+  <div class="step" data-idx="5">
+    <div class="step-num">6</div>
+    <div class="step-icon"><i data-lucide="bar-chart-2"></i></div>
+    <div class="step-title">View Results</div>
+    <span class="badge badge-responses">Responses</span>
+  </div>
+</div>
+
+<script>
+lucide.createIcons();
+
+document.querySelectorAll('.step').forEach(s => {
+  s.addEventListener('click', e => {
+    e.stopPropagation();
+    const isActive = s.classList.contains('active');
+    document.querySelectorAll('.step').forEach(x => x.classList.remove('active'));
+    if (!isActive) s.classList.add('active');
+  });
+});
+
+document.addEventListener('click', () => {
+  document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+});
+</script>
+</body>
+</html>
