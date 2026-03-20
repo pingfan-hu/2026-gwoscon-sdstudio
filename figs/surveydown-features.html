@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>surveydown features</title>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/maple-mono@5.2.5/index.min.css">
+<style>
+  @font-face {
+    font-family: 'TsangerJinKai';
+    src: url('https://raw.githubusercontent.com/pingfan-hu/resources/main/fonts/TsangerJinKai02-W04.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: transparent;
+    font-family: 'TsangerJinKai', Georgia, serif;
+    color: #564232;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 16px 20px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+    width: 100%;
+    max-width: 860px;
+  }
+
+  .card {
+    border: 2px solid #5654A2;
+    border-radius: 14px;
+    background: #F8F7F0;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(86, 84, 162, 0.15);
+  }
+
+  .card-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    background: #E6F2F0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .card-icon svg {
+    width: 28px;
+    height: 28px;
+    color: #2C8475;
+    stroke-width: 1.8;
+  }
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .card-title {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #2C8475;
+    line-height: 1.2;
+  }
+
+  .card-desc {
+    font-size: 1.15em;
+    color: #564232;
+    line-height: 1.4;
+  }
+
+  .tag {
+    display: inline-block;
+    font-family: 'Maple Mono', monospace;
+    font-size: 0.78em;
+    background: #E6F2F0;
+    color: #2C8475;
+    border-radius: 4px;
+    padding: 1px 5px;
+    margin: 1px 1px 0 0;
+  }
+</style>
+</head>
+<body>
+
+<div class="grid">
+
+  <!-- 1: Question types -->
+  <div class="card">
+    <div class="card-icon">
+      <i data-lucide="layout-grid"></i>
+    </div>
+    <div class="card-body">
+      <div class="card-title">12 Built-in Question Types</div>
+      <div class="card-desc">
+        <span class="tag">text</span>
+        <span class="tag">mc</span>
+        <span class="tag">mc_buttons</span>
+        <span class="tag">slider</span>
+        <span class="tag">numeric</span>
+        <span class="tag">date</span>
+        <span class="tag">select</span>
+        and more
+      </div>
+    </div>
+  </div>
+
+  <!-- 2: Conditional logics -->
+  <div class="card">
+    <div class="card-icon">
+      <i data-lucide="git-branch"></i>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Conditional Logics</div>
+      <div class="card-desc">
+        Show, skip, or stop — based on<br>any question response
+      </div>
+    </div>
+  </div>
+
+  <!-- 3: Shiny compatibility -->
+  <div class="card">
+    <div class="card-icon">
+      <i data-lucide="zap"></i>
+    </div>
+    <div class="card-body">
+      <div class="card-title">Shiny Compatibility</div>
+      <div class="card-desc">
+        If it works in Shiny,<br>it works in <strong>surveydown</strong>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4: LLM compatibility -->
+  <div class="card">
+    <div class="card-icon">
+      <i data-lucide="bot"></i>
+    </div>
+    <div class="card-body">
+      <div class="card-title">LLM Compatibility</div>
+      <div class="card-desc">
+        Generate surveys and embed<br>AI-powered interactions
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  lucide.createIcons();
+</script>
+</body>
+</html>

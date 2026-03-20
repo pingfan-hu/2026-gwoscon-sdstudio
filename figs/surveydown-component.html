@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>surveydown components</title>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/maple-mono@5.2.5/index.min.css">
+<style>
+  @font-face {
+    font-family: 'TsangerJinKai';
+    src: url('https://raw.githubusercontent.com/pingfan-hu/resources/main/fonts/TsangerJinKai02-W04.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: transparent;
+    font-family: 'TsangerJinKai', Georgia, serif;
+    color: #564232;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+
+  .outer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    width: 100%;
+    max-width: 820px;
+  }
+
+  .container {
+    display: flex;
+    align-items: stretch;
+    gap: 40px;
+    width: 100%;
+  }
+
+  .db-card {
+    width: 100%;
+    border: 2px solid #5654A2;
+    border-radius: 14px;
+    padding: 14px 28px;
+    background: #F8F7F0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .db-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(86, 84, 162, 0.15);
+  }
+
+  .db-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: #EEE8F5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .db-icon svg {
+    width: 20px;
+    height: 20px;
+    color: #5654A2;
+    stroke-width: 1.8;
+  }
+
+  .db-text {
+    font-size: 1.2em;
+    color: #564232;
+  }
+
+  .db-text strong {
+    font-family: 'Maple Mono', monospace;
+    color: #5654A2;
+  }
+
+  .plus {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.4em;
+    font-weight: bold;
+    color: #F8F7F0;
+    flex-shrink: 0;
+    padding: 0 4px;
+  }
+
+  .card {
+    flex: 1;
+    border: 2px solid #5654A2;
+    border-radius: 14px;
+    padding: 28px 28px 24px;
+    background: #F8F7F0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(86, 84, 162, 0.15);
+  }
+
+  .card-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .card-icon svg {
+    width: 30px;
+    height: 30px;
+    stroke-width: 1.8;
+  }
+
+  .card-title {
+    font-size: 1.6em;
+    font-weight: bold;
+    letter-spacing: 0.01em;
+    text-align: center;
+    font-family: 'Maple Mono', monospace;
+  }
+
+  .card-divider {
+    width: 60%;
+    height: 1.5px;
+    border-radius: 2px;
+    opacity: 0.4;
+  }
+
+  .card-desc {
+    font-size: 1.3em;
+    line-height: 1.6;
+    text-align: center;
+    color: #564232;
+  }
+
+  /* Left card — survey.qmd — teal */
+  .card-left .card-icon { background: #E6F2F0; }
+  .card-left .card-icon svg { color: #2C8475; }
+  .card-left .card-title { color: #2C8475; }
+  .card-left .card-divider { background: #2C8475; }
+
+  /* Right card — app.R — amber */
+  .card-right .card-icon { background: #FFF4E0; }
+  .card-right .card-icon svg { color: #FFB84D; }
+  .card-right .card-title { color: #C8860A; }
+  .card-right .card-divider { background: #FFB84D; }
+</style>
+</head>
+<body>
+
+<div class="outer">
+<div class="container">
+
+  <div class="card card-left">
+    <div class="card-icon">
+      <i data-lucide="file-text"></i>
+    </div>
+    <div class="card-title">survey.qmd</div>
+    <div class="card-divider"></div>
+    <div class="card-desc">
+      A <strong>Quarto document</strong> defining the survey content — pages, text, images, and questions.
+    </div>
+  </div>
+
+  <div class="plus">+</div>
+
+  <div class="card card-right">
+    <div class="card-icon">
+      <i data-lucide="code-2"></i>
+    </div>
+    <div class="card-title">app.R</div>
+    <div class="card-divider"></div>
+    <div class="card-desc">
+      An <strong>R script</strong> defining the survey logic, flow, and Shiny app configuration.
+    </div>
+  </div>
+
+</div>
+
+  <div class="db-card">
+    <div class="db-icon">
+      <i data-lucide="database"></i>
+    </div>
+    <div class="db-text">
+      <strong>PostgreSQL</strong> as the survey response database
+    </div>
+  </div>
+
+</div>
+
+<script>
+  lucide.createIcons();
+</script>
+</body>
+</html>

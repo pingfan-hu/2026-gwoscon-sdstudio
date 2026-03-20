@@ -22,9 +22,9 @@ fence_start <- function(highlights = NULL) {
 
 surveycode <- function(highlights = NULL) {
   survey_text <- '---
-format: html
-echo: false
-warning: false
+survey-settings:
+  use-cookies: true
+  rate-survey: false
 ---
 
 ```{r}
@@ -45,8 +45,6 @@ sd_question(
     "No"  = "no"
   )
 )
-
-sd_next()
 ```
 
 --- some_other_page

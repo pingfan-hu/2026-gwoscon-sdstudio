@@ -14,45 +14,20 @@ source("scripts.R")
 ::: {.column width="62%"}
 - **Pingfan Hu**, PhD Candidate at George Washington University, advised by Dr John Helveston.
 
-- Research field: Sustainable transportation
+- Research field:
+  <div style="margin-left: 1em; line-height: 1;">
+    1. Sustainable transportation
+    2. Human behavior and decision-making
+  </div>
 
 - Research focuses:
-  <div style="margin-left: 1em;">
-    1. Open-source software development 
+  <div style="margin-left: 1em; line-height: 1;">
+    1. Open-source software development
     2. Data science and choice modeling
   </div>
 
 - For more infomation, visit [**pingfanhu.com**](http://pingfanhu.com)
 :::
-:::
-
-::: {.notes}
-Hi! My name is Pingfan Hu, a PhD Candidate at the George Washington University, supervised by Dr John Helveston.
-
-My research focuses on EV grid integration, consumer behavior studies on transportation, and research software development.
-
-For more information, you can visit my website at pingfanhu.com.
-:::
-
-## Recap of `surveydown` {.dark-centered .center}
-
-## I try to figure out what people want... {.black-centered .center}
-
-![](figs/crystal_ball.jpg){fig-align="center" width=500}
-
-## {.dark-centered .center}
-
-::: {.column width="20%"}
-::: {layout="[[-1], [1], [-1]]"}
-![](figs/member-john-helveston.png){fig-align="center" width="80%" .round-image}
-:::
-
-Prof. John Helveston
-
-:::
-
-::: {.column .fragment width="80%"}
-![](figs/prof-x.gif){width="90%" .purple-border}
 :::
 
 ## {.light-centered .center}
@@ -61,57 +36,7 @@ Prof. John Helveston
 
 ## WYSIWYG Interface {.light-centered .center}
 
-![](figs/google-form.png){fig-align="center" width="90%"}
-
-## {.light-centered .center}
-
-::: {.column width="70%"}
-![](figs/google-form.png)
-:::
-
-::: {.column width="30%"}
-
-### Limitations
-
-<br>
-
-::: {style="text-align: left;"}
-
-❌ Reproduciblity
-
-::: {.fragment}
-❌ Version control
-:::
-:::
-:::
-
-## {.light-centered .center}
-
-![](figs/version-control.png){fig-align="center" width="40%"}
-
-## {.light-centered .center}
-
-::: {.column width="70%"}
-![](figs/google-form.png)
-:::
-
-::: {.column style="width: 30%; text-align: left;"}
-
-### Limitations
-
-<br>
-
-❌ Reproduciblity
-
-❌ Version control
-
-❌ Limited features
-
-::: {.fragment}
-❌ Open source
-:::
-
-:::
+<iframe src="figs/surveydown-wysiwyg-problem.html" style="width:100%; height:500px; border:none;"></iframe>
 
 ## {.dark-centered .center}
 
@@ -147,116 +72,11 @@ Prof. John Helveston
 
 ![](figs/logo-surveydown.png){fig-align="center" width=300}
 
-## In this talk, we will cover: {.light-centered .center}
-
-<br>
-
-::: {.grid-container style="height: 40vh;"}
-::: {.centered-container style="width: 500px;"}
-What is `surveydown`?
-:::
-
-::: {.centered-container style="width: 500px;"}
-How does it work?
-:::
-
-::: {.centered-container style="width: 500px;"}
-What can I do with it?
-:::
-
-::: {.centered-container style="width: 500px;"}
-What's next?
-:::
-:::
-
-## What is `surveydown`? {.dark-centered .center style="font-size: 1.2em;"}
-
-<br>
-
-![](figs/logo-surveydown.png){fig-align="center" width=300}
-
 ## R package that renders [Quarto]{.teal} files into [surveys]{.teal} {.light-centered .center}
 
 <br>
 
 ![](figs/what-is-surveydown.png){fig-align="center" width=100%}
-
-## [Quarto]{.teal} is a publishing system {.light-centered .center}
-
-<br>
-
-![](figs/quarto-process.png){fig-align="center" width=100% .purple-border}
-
-## {style="font-size: 0.7em;"}
-
-::: {.column width="48%"}
-
-### Original `qmd` file {style="text-align: center;"}
-
-<br>
-<br>
-
-::: {style="text-align: center;"}
-Markdown + `R code` chunks
-:::
-
-```{r}
-#| results: 'asis'
-quarto_r_html()
-```
-
-:::
-
-::: {.column width="4%"}
-:::
-
-::: {.column .fragment width="48%"}
-
-### Rendered HTML {style="text-align: center;"}
-
-<br>
-
-![](figs/quarto-r-html.png){fig-align="center" width=100%}
-
-:::
-
-## {style="font-size: 0.7em;"}
-
-::: {.column width="48%"}
-
-### Original `qmd` file {style="text-align: center;"}
-
-<br>
-<br>
-
-::: {style="text-align: center;"}
-Markdown + `Python code` chunks
-:::
-
-```{r}
-#| results: 'asis'
-quarto_python_pdf()
-```
-
-:::
-
-::: {.column width="4%"}
-:::
-
-::: {.column .fragment width="48%"}
-
-### Rendered PDF {style="text-align: center;"}
-
-<br>
-
-![](figs/quarto-python-pdf.png){fig-align="center" width=100%}
-
-:::
-
-## {.light-centered .center}
-
-![](figs/what-is-surveydown.png){width=100%}
-
 
 ## {style="font-size: 0.7em;"}
 
@@ -303,7 +123,7 @@ surveycode("1-5")
 ::: {.column width="48%"}
 
 ::: {.bubble-left style="display: block; transform: none; top: 10%;"}
-YAML header for a "clean" output
+YAML header for survey settings
 :::
 
 :::
@@ -340,7 +160,7 @@ Load the `surveydown` Package
 
 ```{r}
 #| results: 'asis'
-surveycode("11,29")
+surveycode("11,27")
 ```
 
 :::
@@ -356,22 +176,6 @@ Use triple-dash marker (`---`)
 to define survey pages
 :::
 
-::: {.fragment .bubble-left style="display: block; transform: none; top: 50%;"}
-Quarto fences (`:::`) also OK:
-
-<br>
-
-`::: {#welcome .sd-page}`
-
-<br>
-
-`Page content`
-
-<br>
-
-`:::`
-:::
-
 :::
 
 ## {style="font-size: 0.7em;"}
@@ -382,7 +186,7 @@ Quarto fences (`:::`) also OK:
 
 ```{r}
 #| results: 'asis'
-surveycode("13-27")
+surveycode("13-25")
 ```
 
 :::
@@ -397,7 +201,7 @@ Page content
 
 - Markdown for texts, images, etc.
 - `sd_question()` for survey questions
-- `sd_next()` for page navigation
+- Auto navigation
 :::
 
 :::
@@ -410,7 +214,7 @@ Page content
 
 ```{r}
 #| results: 'asis'
-surveycode("1-27")
+surveycode()
 ```
 
 :::
@@ -428,86 +232,11 @@ surveycode("1-27")
 
 :::
 
-## {style="font-size: 0.7em;"}
-
-::: {.column width="48%"}
-
-### `survey.qmd` {style="text-align: center;"}
-
-```{r}
-#| results: 'asis'
-surveycode("18,20,21,22")
-```
-
-:::
-
-::: {.column width="4%"}
-:::
-
-::: {.column width="48%"}
-
-### Rendered Survey {style="text-align: center;"}
-
-![](figs/survey-question.png){fig-align="center" width=600}
-
-![](figs/has-fav-hero.png){fig-align="center" width=180 style="margin-top: -40px;"}
-
-:::
-
-## Wait a minute...<br>Quarto renders to [static]{.amber} html pages, right? {.dark-centered .center}
+## [Shiny]{.sage} makes pages interactive {.light-centered .center}
 
 <br>
-
-![](figs/batman-think.gif){fig-align="center" width=40%}
-
-## [Shiny]{.amber} to the rescue! {.dark-centered .center}
-
-<br>
-
-::: {.column}
-![](figs/logo-shiny.png){width=300}
-:::
-
-::: {.column}
-![](figs/batman-thumbs-up.gif){fig-align="center" width=70%}
-:::
-
-## {.light-centered .center}
-
-![](figs/what-is-surveydown.png){width=100%}
-
-## {.light-centered .center}
-
-![](figs/what-is-surveydown-2.png){width=100%}
-
-## {.light-centered .center}
 
 ![](figs/what-is-surveydown-3.png){width=100%}
-
-## A complete `surveydown` survey {.light-centered .center}
-
-<br>
-
-::: {.fragment .column style="width: 48%;"}
-`survey.qmd`
-
-A **Quarto doc** defining the survey content (pages, texts, images, questions, etc).
-:::
-
-::: {.column width="4%"}
-:::
-
-::: {.fragment .column style="width: 48%;"}
-`app.R`
-
-An **R script** defining the survey Shiny app.
-:::
-
-## Don't panic! {.dark-centered .center}
-
-<br>
-
-![](figs/spiderman-oh-no.gif){width=80% .purple-border}
 
 ## {style="font-size: 0.9em;"}
 
@@ -554,67 +283,9 @@ Run the `surveydown` server
 
 :::
 
-## Wait a minute...<br>How do you store the response [data]{.amber}? {.dark-centered .center}
+## A complete `surveydown` survey {.dark-centered .center}
 
-<br>
-
-![](figs/superman-think.gif){fig-align="center" width=50% .purple-border}
-
-## [PostgreSQL]{.amber} to the rescue! {.dark-centered .center}
-
-<br>
-
-::: {.column}
-
-<br>
-
-![](figs/logo-postgres.png){width=300}
-:::
-
-::: {.column}
-![](figs/superman-oh-yeah.gif){fig-align="center" width=60% .purple-border}
-:::
-
-## [`supabase.com`](https://supabase.com) {.light-centered .center}
-
-![](figs/supabase-table.png){width=100%}
-
-
-##
-
-::: {.column style="width: 58%; font-size: 0.9em;"}
-
-### `app.R` {style="text-align: center;"}
-
-<br>
-
-```{r}
-#| results: 'asis'
-appcode_long("3,4,10")
-```
-
-:::
-
-::: {.column width="2%"}
-:::
-
-::: {.column style="width: 40%; font-size: 0.7em;"}
-
-::: {.bubble-left style="display: block; transform: none; top: 21%;"}
-Store credentials
-
-Connect to the database
-:::
-
-::: {.bubble-left style="display: block; transform: none; top: 47%;"}
-Pass connection to `sd_server()`
-:::
-
-:::
-
-## {.light-centered .center}
-
-![](figs/get-data.png){width=100%}
+<iframe src="figs/surveydown-component.html" style="width:100%; height:440px; border:none;"></iframe>
 
 ## What is `surveydown`? {.dark-centered .center style="font-size: 1.2em;"}
 
@@ -626,194 +297,19 @@ Pass connection to `sd_server()`
 
 ![](figs/technologies.svg){fig-align="center" width=100%}
 
-## What can `surveydown` do? {.dark-centered .center}
+## `surveydown` Features {.dark-centered .center}
 
-## `surveydown` is feature-packed! {.light-centered .center}
+<iframe src="figs/surveydown-features.html" style="width:100%; height:340px; border:none;"></iframe>
 
-![](figs/features.png){width=75%}
+## But... {.light-centered .center}
 
-## Feature Highlights {.light-centered .center}
-
-<br>
-
-::: {.grid-container style="height: 20vh;"}
-::: {.centered-container style="width: 500px;"}
-Question types
-:::
-
-::: {.centered-container style="width: 500px;"}
-Conditional logic
-:::
-:::
-
-## 12 Built-in Question Types {.light-centered .center}
-
-::: {.four-by-three-grid}
-`text`
-
-`textarea`
-
-`numeric`
-
-`mc`
-
-`mc_multiple`
-
-`mc_buttons`
-
-`mc_multiple_buttons`
-
-`select`
-
-`slider`
-
-`slider_numeric`
-
-`date`
-
-`daterange`
-:::
-
-## Question Type: `text` {.light-centered .center}
-
-<br>
-
-::: {.column style="width: 48%; font-size: 0.7em;"}
-
-```{r}
-#| results: 'asis'
-question_text()
-```
-
-:::
-
-::: {.column style="width: 4%; font-size: 0.7em; text-align: center;"}
-
-<br>
-
-### -->
-:::
-
-::: {.column style="width: 48%; margin-left: -10px; margin-top: -10px;"}
-![](figs/question-text.png){width=100%}
-:::
-
-## Question Type: `mc_buttons` {.light-centered .center}
-
-<br>
-
-::: {.column style="width: 48%; font-size: 0.7em; margin-top: -10px;"}
-
-<br>
-
-```{r}
-#| results: 'asis'
-question_mc_buttons()
-```
-
-:::
-
-::: {.column style="width: 4%; font-size: 0.7em; text-align: center;"}
-
-<br>
-<br>
-<br>
-<br>
-
-### -->
-:::
-
-::: {.column style="width: 48%; margin-left: -10px; margin-top: -30px;"}
-![](figs/question-mc-buttons.png){width=100%}
-:::
-
-## Conditional logic {.light-centered .center}
-
-<br>
-
-::: {.grid-container style="height: 30vh;"}
-::: {.centered-container style="width: 500px;"}
-**Conditional showing**
-:::
-
-::: {.centered-container style="width: 500px;"}
-Conditional skipping
-:::
-
-::: {.centered-container style="width: 500px;"}
-Conditional stopping
-:::
-:::
-
-## Conditional showing - `sd_show_if()` {.light-centered}
-
-<br>
-
-![](figs/conditional-showing.gif){width=50% .purple-border}
-
-## Conditional showing - `sd_show_if()` {.light-centered}
-
-<br>
-
-::: {.column style="width: 49%; font-size: 0.7em;"}
-
-### `survey.qmd` {style="text-align: center;"}
-
-```{r}
-#| results: 'asis'
-show_if_survey()
-```
-
-:::
-
-::: {.column width="2%"}
-:::
-
-::: {.column .fragment style="width: 49%; font-size: 0.7em;"}
-
-### `app.R` {style="text-align: center;"}
-
-```{r}
-#| results: 'asis'
-show_if_app()
-```
-
-::: {.bubble-top style="text-align: center; display: block; transform: none; top: 40%;"}
-Condition ~ Target
-
-<br>
-
-"If {condition}, then show {target}"
-:::
-:::
-
-## If it works in [Shiny]{.amber},<br>it works in `surveydown`. {.dark-centered .center style="font-size: 1.2em;"}
-
-## Embedding an interactive map with `leaflet`: {.light-centered .center}
-
-![](figs/leaflet.gif){fig-align="center" width=65%}
-
-## {.dark-centered .center}
-
-::: {.column style="width: 49%;"}
-![](figs/deadpool-clap.gif){.purple-border}
-:::
-
-::: {.column style="width: 2%;"}
-:::
-
-::: {.column style="width: 49%;"}
-
-<br>
-
-### `surveydown` + LLMs<br>is pretty cool {style="font-size: 1.2em;"}
-:::
-
-## Generate surveys with LLMs! {.light-centered .center}
-
-![](figs/llm.gif){fig-align="center" width=80% .purple-border}
+<iframe src="figs/surveydown-problems.html" style="width:100%; height:300px; border:none;"></iframe>
 
 ## Introducing `sdstudio`! {.dark-centered .center style="font-size: 1.2em;"}
+
+<br>
+
+![](figs/logo-sdstudio.png){fig-align="center" width=350}
 
 ## [Studio]{.amber} Workflow {.dark-centered .center}
 
