@@ -23,6 +23,12 @@ quarto preview    # Live preview with hot reload
 
 `quarto render` exits 0 with no warnings.
 
+`figs/studio-*.html` files are not processed by Quarto — validate them by opening directly in a browser. The iframe height in `index.qmd` may need manual tuning after content changes.
+
+## Notes for Claude
+
+- The global CLAUDE.md task-file workflow (`tasks/todo.md`, `tasks/lessons.md`) does not apply to this project. This is a single-file presentation repo with no build pipeline or tests.
+
 ---
 
 ## Key Technical Details
@@ -33,6 +39,21 @@ Single SCSS file (no separate CSS file). Key variables:
 - **Font:** TsangerJinKai (serif-style), Maple Mono for code
 - **Colors:** background `#F8F7F0`, text `#564232`, purple headings/links `#5654A2`, teal code `#2C8475`, amber `#FFB84D`
 - **Code blocks:** background `#EDEDED`, font-size `0.6em`
+
+**Text color utility classes** (use as `[text]{.classname}` in slides):
+
+| Class | Hex | Description |
+|-------|-----|-------------|
+| `.purple` | `#5654A2` | Purple |
+| `.teal` | `#2C8475` | Teal (also surveydown brand color) |
+| `.amber` | `#FFB84D` | Amber/golden (also sdstudio brand color) |
+| `.navy` | `#2C3E50` | Navy |
+| `.coral` | `#D45F47` | Warm coral-red |
+| `.rose` | `#B5476A` | Muted berry |
+| `.sage` | `#4A7A5A` | Earthy green |
+| `.slate` | `#5A6B80` | Cool blue-gray |
+| `.gold` | `#C4881A` | Rich gold |
+| `.blue` | `#3A7DC9` | Cornflower blue |
 
 ### Custom Slide Classes
 
@@ -51,6 +72,31 @@ Apply to slide headers as `.classname`:
 | `.grid-container` | Centered flexbox grid for feature boxes |
 | `.centered-container` | Bordered orange-text box (for feature labels) |
 | `.img-middle` | Vertically centers inline images |
+
+### Interactive HTML Diagrams (`figs/studio-*.html`)
+
+Self-contained HTML files embedded via `<iframe>` for rich interactive slides. All share the same design system: TsangerJinKai font, `#F8F7F0` background, `2px solid #5654A2` border, `border-radius: 14px`. Embed pattern:
+
+```html
+<iframe src="figs/studio-something.html" style="width:100%; height:280px; border:none;"></iframe>
+```
+
+| File | Slide purpose |
+|------|--------------|
+| `studio-workflow.html` | 6-step sdstudio workflow (clickable steps) |
+| `studio-icons.html` | Editing & Controlling icon groups with hover dark-fill effect |
+| `studio-editing.html` | GUI vs Script two-card comparison |
+| `studio-views.html` | Desktop vs Mobile two-card comparison |
+| `studio-responses.html` | Local vs Database two-card comparison |
+| `studio-summary.html` | 3×2 feature grid summary |
+| `studio-closing.html` | surveydown + sdstudio comparison with two stacked sub-cards per side |
+
+**Design conventions for HTML files:**
+- Icons via Lucide (`<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js">`)
+- Card label badges: `position: absolute; top: -20px` above cards, `font-size: 1.5em`
+- surveydown = teal (`#2C8475`), sdstudio = amber (`#FFB84D`)
+- Hover interactions: cards lift with `translateY(-3px)`, icons flip to filled/dark theme
+- `body { background: transparent }` so iframes blend into slide backgrounds
 
 ### `scripts.R` Helper Functions
 
