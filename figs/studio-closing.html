@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+@font-face {
+  font-family: 'TsangerJinKai';
+  src: url('https://raw.githubusercontent.com/pingfan-hu/resources/main/fonts/TsangerJinKai02-W04.ttf') format('truetype');
+}
+
+body {
+  background: transparent;
+  font-family: 'TsangerJinKai', serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 16px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  background: #F8F7F0;
+  border: 2px solid #5654A2;
+  border-radius: 14px;
+  padding: 24px 24px 0 24px;
+  width: 100%;
+  gap: 0;
+}
+
+/* ── Main row ── */
+.main-row {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 0;
+  flex: 1;
+}
+
+/* ── Column ── */
+.column {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 12px;
+  padding-bottom: 16px;
+  position: relative;
+  margin-top: 20px;
+}
+
+.col-label {
+  text-align: center;
+  font-size: 1.4em;
+  font-weight: 700;
+  padding: 4px 20px;
+  border-radius: 6px;
+  white-space: nowrap;
+  align-self: center;
+}
+.label-surveydown { background: #2C8475; color: #F8F7F0; }
+.label-sdstudio   { background: #FFB84D; color: #564232; }
+
+/* ── Sub-cards ── */
+.sub-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 16px;
+  border-radius: 10px;
+  flex: 1;
+}
+.col-surveydown .sub-card { background: rgba(44, 132, 117, 0.10); }
+.col-sdstudio   .sub-card { background: rgba(255, 184, 77, 0.12); }
+
+/* ── Feature items ── */
+.feature-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 1.2em;
+  color: #564232;
+  text-align: center;
+  line-height: 1.3;
+}
+.feature-item svg { width: 20px; height: 20px; stroke-width: 2; flex-shrink: 0; }
+.col-surveydown .feature-item svg { stroke: #2C8475; }
+.col-sdstudio   .feature-item svg { stroke: #C4881A; }
+
+/* ── Middle connector ── */
+.connector-h {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  flex-shrink: 0;
+  font-size: 2em;
+  color: #5654A2;
+  opacity: 0.45;
+  margin-top: 20px;
+}
+
+/* ── CTA footer ── */
+.cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px;
+  border-top: 1.5px solid rgba(86, 84, 162, 0.18);
+  font-size: 1.1em;
+  font-weight: 700;
+  color: #5654A2;
+}
+.cta svg { width: 20px; height: 20px; stroke: #5654A2; stroke-width: 2; }
+</style>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <div class="main-row">
+
+    <!-- surveydown column -->
+    <div class="column col-surveydown">
+      <div class="col-label label-surveydown">surveydown</div>
+
+      <div class="sub-card">
+        <div class="feature-item"><i data-lucide="pencil-line"></i> Text-based editing</div>
+      </div>
+
+      <div class="sub-card">
+        <div class="feature-item"><i data-lucide="file-text"></i> Published paper</div>
+        <div class="feature-item"><i data-lucide="trending-up"></i> 8000+ CRAN downloads</div>
+      </div>
+    </div>
+
+    <div style="width: 32px; flex-shrink: 0;"></div>
+
+    <!-- sdstudio column -->
+    <div class="column col-sdstudio">
+      <div class="col-label label-sdstudio">sdstudio</div>
+
+      <div class="sub-card">
+        <div class="feature-item"><i data-lucide="mouse-pointer-2"></i> GUI editing &amp; live preview</div>
+      </div>
+
+      <div class="sub-card">
+        <div class="feature-item"><i data-lucide="zap"></i> Actively developed</div>
+        <div class="feature-item"><i data-lucide="github"></i> Open to contributions</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CTA footer -->
+  <div class="cta">
+    <i data-lucide="handshake"></i>
+    Better together!
+  </div>
+</div>
+
+<script>
+lucide.createIcons();
+</script>
+</body>
+</html>

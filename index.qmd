@@ -932,21 +932,17 @@ Condition ~ Target
 
 ![](figs/studio-features-responses-5.png){fig-align="center" width=100%}
 
-## Using `sdstudio`, You can... {.light-centered .center}
+## Database [Responses]{.amber} {.dark-centered .center}
 
-(Use Claude code to generate a chart showing the features of `sdstudio`)
+![](figs/studio-features-responses-6.png){fig-align="center" width=100%}
 
-Survey preview
+## `sdstudio` gives you... {.light-centered .center}
 
-Response dashboard
+<iframe src="figs/studio-summary.html" style="width:100%; height:420px; border:none;"></iframe>
 
-PostgreSQL connection
+## [surveydown]{.teal} + [sdstudio]{.amber} {.dark-centered .center}
 
-Data file view & download
-
-## `surveydown` + `sdstudio` {.dark-centered .center style="font-size: 1.2em;"}
-
-(Content here)
+<iframe src="figs/studio-closing.html" style="width:100%; height:520px; border:none;"></iframe>
 
 ## Ways to help: {.light-centered .center}
 
@@ -964,12 +960,12 @@ Data file view & download
 - Give it a ⭐
 - Post an issue
 - Join the GitHub discussion
-- Contribute a template
+- Contribute new features
 
 :::
 
 ::: {.column width="40%"}
-![](figs/qr-surveydown-repo.svg){fig-align="center" width=70% .purple-border}
+![](figs/qr-sdstudio-repo.svg){fig-align="center" width=70% .purple-border}
 :::
 
 ## {.dark-centered .center}
