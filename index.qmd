@@ -72,11 +72,11 @@ source("scripts.R")
 
 ![](figs/logo-surveydown.png){fig-align="center" width=300}
 
-## R package that renders [Quarto]{.teal} files into [surveys]{.teal} {.light-centered .center}
+## [Survey]{.teal} design using [Quarto]{.coral} and [Shiny]{.coral} {.light-centered .center}
 
 <br>
 
-![](figs/what-is-surveydown.png){fig-align="center" width=100%}
+<iframe src="figs/surveydown-intro.html" style="width:100%; height:420px; border:none;"></iframe>
 
 ## {style="font-size: 0.7em;"}
 
@@ -100,208 +100,11 @@ surveycode()
 
 <br>
 
-![](figs/survey-question.png){fig-align="center" width=600}
+![](figs/survey-question.png){fig-align="center" width=600 .purple-border style="border-radius: 22px;"}
 
 :::
 
-## {style="font-size: 0.7em;"}
-
-::: {.column width="48%"}
-
-### `survey.qmd` {style="text-align: center;"}
-
-```{r}
-#| results: 'asis'
-surveycode("1-5")
-```
-
-:::
-
-::: {.column width="4%"}
-:::
-
-::: {.column width="48%"}
-
-::: {.bubble-left style="display: block; transform: none; top: 10%;"}
-YAML header for survey settings
-:::
-
-:::
-
-## {style="font-size: 0.7em;"}
-
-::: {.column width="48%"}
-
-### `survey.qmd` {style="text-align: center;"}
-
-```{r}
-#| results: 'asis'
-surveycode("7-9")
-```
-
-:::
-
-::: {.column width="4%"}
-:::
-
-::: {.column width="48%"}
-
-::: {.bubble-left style="display: block; transform: none; top: 25%;"}
-Load the `surveydown` Package
-:::
-
-:::
-
-## {style="font-size: 0.7em;"}
-
-::: {.column width="48%"}
-
-### `survey.qmd` {style="text-align: center;"}
-
-```{r}
-#| results: 'asis'
-surveycode("11,27")
-```
-
-:::
-
-::: {.column width="4%"}
-:::
-
-::: {.column width="48%"}
-
-::: {.bubble-left style="display: block; transform: none; top: 32%;"}
-Use triple-dash marker (`---`)
-
-to define survey pages
-:::
-
-:::
-
-## {style="font-size: 0.7em;"}
-
-::: {.column width="48%"}
-
-### `survey.qmd` {style="text-align: center;"}
-
-```{r}
-#| results: 'asis'
-surveycode("13-25")
-```
-
-:::
-
-::: {.column width="4%"}
-:::
-
-::: {.column width="48%"}
-
-::: {.bubble-left style="display: block; transform: none; top: 45%;"}
-Page content
-
-- Markdown for texts, images, etc.
-- `sd_question()` for survey questions
-- Auto navigation
-:::
-
-:::
-
-## {style="font-size: 0.7em;"}
-
-::: {.column width="48%"}
-
-### `survey.qmd` {style="text-align: center;"}
-
-```{r}
-#| results: 'asis'
-surveycode()
-```
-
-:::
-
-::: {.column width="4%"}
-:::
-
-::: {.column width="48%"}
-
-### Rendered Survey {style="text-align: center;"}
-
-<br>
-
-![](figs/survey-question.png){fig-align="center" width=600}
-
-:::
-
-## [Shiny]{.sage} makes pages interactive {.light-centered .center}
-
-<br>
-
-![](figs/what-is-surveydown-3.png){width=100%}
-
-## {style="font-size: 0.9em;"}
-
-::: {.column width="60%"}
-
-### `app.R` {style="text-align: center;"}
-
-<br>
-
-```{r}
-#| results: 'asis'
-appcode_short()
-```
-
-:::
-
-## {style="font-size: 1em;"}
-
-::: {.column style="width: 60%; font-size: 0.9em;"}
-
-### `app.R` {style="text-align: center;"}
-
-<br>
-
-```{r}
-#| results: 'asis'
-appcode_short("3,7")
-```
-
-:::
-
-::: {.column width="4%"}
-:::
-
-::: {.column style="width: 36%; font-size: 0.7em;"}
-
-::: {.bubble-left style="display: block; transform: none; top: 22%;"}
-Render `survey.qmd` as UI
-:::
-
-::: {.bubble-left style="display: block; transform: none; top: 37%;"}
-Run the `surveydown` server
-:::
-
-:::
-
-## A complete `surveydown` survey {.dark-centered .center}
-
-<iframe src="figs/surveydown-component.html" style="width:100%; height:440px; border:none;"></iframe>
-
-## What is `surveydown`? {.dark-centered .center style="font-size: 1.2em;"}
-
-<br>
-
-![](figs/logo-surveydown.png){fig-align="center" width=300}
-
-## {.light-centered .center}
-
-![](figs/technologies.svg){fig-align="center" width=100%}
-
-## `surveydown` Features {.dark-centered .center}
-
-<iframe src="figs/surveydown-features.html" style="width:100%; height:340px; border:none;"></iframe>
-
-## But... {.light-centered .center}
+## But... {.dark-centered .center}
 
 <iframe src="figs/surveydown-problems.html" style="width:100%; height:300px; border:none;"></iframe>
 
