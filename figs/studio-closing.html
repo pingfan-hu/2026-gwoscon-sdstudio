@@ -75,8 +75,10 @@ body {
   border-radius: 10px;
   flex: 1;
 }
-.col-surveydown .sub-card { background: rgba(44, 132, 117, 0.10); }
-.col-sdstudio   .sub-card { background: rgba(255, 184, 77, 0.12); }
+.col-surveydown .sub-card { background: rgba(44, 132, 117, 0.10); transition: transform 0.18s, background 0.18s; }
+.col-sdstudio   .sub-card { background: rgba(255, 184, 77, 0.12); transition: transform 0.18s, background 0.18s; }
+.col-surveydown .sub-card:hover { transform: translateY(-3px); background: rgba(44, 132, 117, 0.20); }
+.col-sdstudio   .sub-card:hover { transform: translateY(-3px); background: rgba(255, 184, 77, 0.25); }
 
 /* ── Feature items ── */
 .feature-item {

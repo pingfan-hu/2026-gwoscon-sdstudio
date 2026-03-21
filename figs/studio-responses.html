@@ -56,7 +56,7 @@ body {
 .card-local {
   background: rgba(255, 184, 77, 0.12);
 }
-.card-local:hover, .card-local.active {
+.card-local:hover {
   background: rgba(255, 184, 77, 0.25);
   border-color: #FFB84D;
   transform: translateY(-3px);
@@ -65,7 +65,7 @@ body {
 .card-database {
   background: rgba(44, 132, 117, 0.10);
 }
-.card-database:hover, .card-database.active {
+.card-database:hover {
   background: rgba(44, 132, 117, 0.22);
   border-color: #2C8475;
   transform: translateY(-3px);
@@ -136,19 +136,6 @@ body {
 
 <script>
 lucide.createIcons();
-
-document.querySelectorAll('.card').forEach(c => {
-  c.addEventListener('click', e => {
-    e.stopPropagation();
-    const isActive = c.classList.contains('active');
-    document.querySelectorAll('.card').forEach(x => x.classList.remove('active'));
-    if (!isActive) c.classList.add('active');
-  });
-});
-
-document.addEventListener('click', () => {
-  document.querySelectorAll('.card').forEach(c => c.classList.remove('active'));
-});
 </script>
 </body>
 </html>

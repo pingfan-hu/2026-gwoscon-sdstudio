@@ -58,11 +58,6 @@ body {
   background: rgba(86, 84, 162, 0.15);
   transform: translateY(-3px);
 }
-.step.active {
-  background: rgba(86, 84, 162, 0.18);
-  border-color: #5654A2;
-  transform: translateY(-3px);
-}
 
 .step-num {
   position: absolute;
@@ -155,19 +150,6 @@ body {
 
 <script>
 lucide.createIcons();
-
-document.querySelectorAll('.step').forEach(s => {
-  s.addEventListener('click', e => {
-    e.stopPropagation();
-    const isActive = s.classList.contains('active');
-    document.querySelectorAll('.step').forEach(x => x.classList.remove('active'));
-    if (!isActive) s.classList.add('active');
-  });
-});
-
-document.addEventListener('click', () => {
-  document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
-});
 </script>
 </body>
 </html>

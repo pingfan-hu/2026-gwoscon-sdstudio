@@ -59,10 +59,6 @@ body {
   background: rgba(86, 84, 162, 0.07);
 }
 
-.logo-item.active {
-  transform: translateY(-2px) scale(0.96);
-  background: rgba(86, 84, 162, 0.13);
-}
 
 .operator {
   font-size: 2.4em;
@@ -98,10 +94,6 @@ body {
   border-color: #5654A2;
 }
 
-.result-wrap.active {
-  transform: translateY(-2px) scale(0.98);
-  box-shadow: 0 4px 12px rgba(86, 84, 162, 0.12);
-}
 </style>
 </head>
 <body>
@@ -130,21 +122,6 @@ body {
   </div>
 </div>
 
-<script>
-const clickables = document.querySelectorAll('.logo-item, .result-wrap');
 
-clickables.forEach(el => {
-  el.addEventListener('click', e => {
-    e.stopPropagation();
-    const isActive = el.classList.contains('active');
-    clickables.forEach(x => x.classList.remove('active'));
-    if (!isActive) el.classList.add('active');
-  });
-});
-
-document.addEventListener('click', () => {
-  clickables.forEach(el => el.classList.remove('active'));
-});
-</script>
 </body>
 </html>
