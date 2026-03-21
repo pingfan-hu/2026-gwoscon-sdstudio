@@ -130,14 +130,16 @@ Every interactive element (cards, logo items, result images) must follow this ex
 **Never add click/active behavior.** No `addEventListener('click', ...)`, no `.active` CSS class, no JS beyond `lucide.createIcons()`.
 
 #### Images inside HTML files
-Always embed as base64 data URIs — never use relative file paths. Quarto may not copy unreferenced assets to `_site/`. Use Python to generate:
+Use **relative paths** (e.g., `src="logo-foo.png"`) — simple and maintainable. This works because `_quarto.yml` declares `figs/` as a resource directory, so Quarto copies the entire `figs/` folder to `_site/figs/`:
 
-```python
-import base64
-with open('figs/logo-foo.png', 'rb') as f:
-    b64 = base64.b64encode(f.read()).decode()
-# then: src="data:image/png;base64,{b64}"
+```yaml
+# _quarto.yml
+project:
+  resources:
+    - figs/
 ```
+
+If you add a new asset subdirectory and images aren't appearing in the rendered site, add it to `resources` in `_quarto.yml` the same way. Do **not** use base64 embedding — it bloats files and makes them hard to edit.
 
 #### Embedding in index.qmd
 ```html
