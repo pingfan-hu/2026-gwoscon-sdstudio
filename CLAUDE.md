@@ -23,7 +23,7 @@ quarto preview    # Live preview with hot reload
 
 `quarto render` exits 0 with no warnings.
 
-`figs/studio-*.html` files are not processed by Quarto — validate them by opening directly in a browser. The iframe height in `index.qmd` may need manual tuning after content changes.
+`figs/*.html` files are not processed by Quarto — validate them by opening directly in a browser. The iframe height in `index.qmd` may need manual tuning after content changes.
 
 ## Notes for Claude
 
@@ -83,20 +83,67 @@ Self-contained HTML files embedded via `<iframe>` for rich interactive slides. A
 
 | File | Slide purpose |
 |------|--------------|
-| `studio-workflow.html` | 6-step sdstudio workflow (clickable steps) |
+| `studio-workflow.html` | 6-step sdstudio workflow |
 | `studio-icons.html` | Editing & Controlling icon groups with hover dark-fill effect |
 | `studio-editing.html` | GUI vs Script two-card comparison |
 | `studio-views.html` | Desktop vs Mobile two-card comparison |
 | `studio-responses.html` | Local vs Database two-card comparison |
 | `studio-summary.html` | 3×2 feature grid summary |
 | `studio-closing.html` | surveydown + sdstudio comparison with two stacked sub-cards per side |
+| `surveydown-intro.html` | surveydown + Quarto + Shiny = survey equation (base64 images) |
+| `surveydown-problems.html` | Two-card problem statement (Code-Only, Learning Curve) |
+| `surveydown-component.html` | surveydown component overview |
+| `surveydown-features.html` | surveydown feature cards |
 
-**Design conventions for HTML files:**
-- Icons via Lucide (`<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js">`)
-- Card label badges: `position: absolute; top: -20px` above cards, `font-size: 1.5em`
-- surveydown = teal (`#2C8475`), sdstudio = amber (`#FFB84D`)
-- Hover interactions: cards lift with `translateY(-3px)`, icons flip to filled/dark theme
-- `body { background: transparent }` so iframes blend into slide backgrounds
+**Design conventions for ALL HTML files — follow these strictly when creating new ones:**
+
+#### Structure
+- `body { background: transparent; overflow: hidden; }` — blends into slide, no scrollbars
+- Outer container: `background: #FFFFFF; border: 2px solid #5654A2; border-radius: 14px;`
+- Font: TsangerJinKai loaded via CDN (see existing files for `@font-face` snippet)
+- Icons: Lucide via `<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js">`
+
+#### Colors
+- surveydown brand = teal `#2C8475`; sdstudio brand = amber `#FFB84D`
+- Primary accent (borders, operators) = purple `#5654A2`
+- Body text = `#564232`; icon gold on light bg = `#C4881A`
+- Card backgrounds: teal tint `rgba(44,132,117,0.10)`, amber tint `rgba(255,184,77,0.12)`
+
+#### Hover behavior (hover-only — no click/active)
+Every interactive element (cards, logo items, result images) must follow this exact pattern:
+
+```css
+.card {
+  transition: transform 0.18s, background 0.18s, border-color 0.18s;
+  will-change: transform;
+  backface-visibility: hidden;
+  cursor: pointer;
+  user-select: none;
+}
+.card:hover {
+  transform: translateY(-3px);
+  background: rgba(..., 0.22);   /* slightly stronger tint */
+  border-color: #5654A2;         /* or brand color */
+}
+```
+
+**Never add click/active behavior.** No `addEventListener('click', ...)`, no `.active` CSS class, no JS beyond `lucide.createIcons()`.
+
+#### Images inside HTML files
+Always embed as base64 data URIs — never use relative file paths. Quarto may not copy unreferenced assets to `_site/`. Use Python to generate:
+
+```python
+import base64
+with open('figs/logo-foo.png', 'rb') as f:
+    b64 = base64.b64encode(f.read()).decode()
+# then: src="data:image/png;base64,{b64}"
+```
+
+#### Embedding in index.qmd
+```html
+<iframe src="figs/something.html" style="width:100%; height:300px; border:none;"></iframe>
+```
+Height needs manual tuning — open the HTML directly in a browser first, then adjust the iframe `height` in `index.qmd`.
 
 ### `scripts.R` Helper Functions
 

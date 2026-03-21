@@ -32,11 +32,11 @@ source("scripts.R")
 
 ## {.light-centered .center}
 
-![](figs/demo.gif){fig-align="center" width="85%" .purple-border}
+![](figs/surveydown-demo.gif){fig-align="center" width="85%" .purple-border}
 
 ## WYSIWYG Interface {.light-centered .center}
 
-<iframe src="figs/surveydown-wysiwyg-problem.html" style="width:100%; height:500px; border:none;"></iframe>
+<iframe src="figs/surveydown-problem.html" style="width:100%; height:500px; border:none;"></iframe>
 
 ## {.dark-centered .center}
 
@@ -106,7 +106,7 @@ surveycode()
 
 ## But... {.dark-centered .center}
 
-<iframe src="figs/surveydown-problems.html" style="width:100%; height:300px; border:none;"></iframe>
+<iframe src="figs/surveydown-transition.html" style="width:100%; height:300px; border:none;"></iframe>
 
 ## Introducing `sdstudio`! {.dark-centered .center style="font-size: 1.2em;"}
 
