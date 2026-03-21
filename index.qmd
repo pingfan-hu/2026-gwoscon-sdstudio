@@ -34,7 +34,7 @@ source("scripts.R")
 
 ![](figs/surveydown-demo.gif){fig-align="center" width="85%" .purple-border}
 
-## WYSIWYG Interface {.light-centered .center}
+## WYSIWYG Interface {.light-centered .center} 
 
 <iframe src="figs/surveydown-problem.html" style="width:100%; height:500px; border:none;"></iframe>
 
