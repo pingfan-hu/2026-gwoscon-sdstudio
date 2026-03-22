@@ -4,6 +4,7 @@ project:
     - figs/
   render:
     - "*.qmd"
+    - "!survey/"
 
 pagetitle: "sdstudio GW OSCON"
 title: "`sdstudio`<br>[A Companion Package for Designing<br>and Managing `surveydown` Surveys]{.small}"

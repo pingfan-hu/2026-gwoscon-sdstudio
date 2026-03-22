@@ -1,0 +1,332 @@
+---
+title: "Superhero Knowledge & Preferences Survey"
+survey-settings:
+  show-previous: true
+  auto-scroll: false
+  rate-survey: false
+  all-required: false
+  required:
+    - consent
+    - age_group
+    - universe_pref
+    - fav_hero
+    - hero_qualities
+barcolor: "#5654A2"
+barposition: "top"
+theme: "default"
+footer: "Superhero Survey · Powered by surveydown"
+---
+
+```{r}
+#| context: setup
+#| echo: false
+library(surveydown)
+```
+
+--- welcome
+
+## Welcome to the Superhero Survey! 🦸
+
+We're collecting data on superhero knowledge and preferences. This short survey takes about **3–5 minutes** to complete. Your responses are anonymous.
+
+```{r}
+#| echo: false
+sd_question(
+  type  = "mc",
+  id    = "consent",
+  label = "Do you consent to participate in this survey?",
+  option = c(
+    "Yes, I consent" = "yes",
+    "No, I do not consent" = "no"
+  )
+)
+```
+
+`r sd_nav(label_next = "Start Survey →")`
+
+--- screener
+
+## A Quick Check
+
+```{r}
+#| echo: false
+sd_question(
+  type  = "mc",
+  id    = "age_group",
+  label = "What is your age group?",
+  option = c(
+    "Under 18" = "under18",
+    "18–24"    = "18_24",
+    "25–34"    = "25_34",
+    "35–44"    = "35_44",
+    "45–54"    = "45_54",
+    "55+"      = "55plus"
+  )
+)
+```
+
+```{r}
+#| echo: false
+sd_question(
+  type  = "mc",
+  id    = "superhero_fan",
+  label = "How would you describe yourself as a superhero fan?",
+  option = c(
+    "Hardcore fan — I know my lore!"       = "hardcore",
+    "Casual fan — I enjoy the movies/shows" = "casual",
+    "Not really a fan"                      = "not_fan"
+  )
+)
+```
+
+`r sd_nav()`
+
+--- knowledge
+
+## Superhero Knowledge
+
+```{r}
+#| echo: false
+sd_question(
+  type  = "mc",
+  id    = "universe_pref",
+  label = "Which superhero universe are you more familiar with?",
+  option = c(
+    "Marvel (MCU)"       = "marvel",
+    "DC (DCU)"           = "dc",
+    "Both equally"       = "both",
+    "Neither — I'm new!" = "neither"
+  )
+)
+```
+
+```{r}
+#| echo: false
+sd_question(
+  type  = "slider_numeric",
+  id    = "knowledge_score",
+  label = "How would you rate your overall superhero knowledge? (0 = none, 10 = expert)",
+  option = 0:10,
+  default = 5
+)
+```
+
+```{r}
+#| echo: false
+sd_question(
+  type  = "mc_multiple",
+  id    = "media_consumed",
+  label = "Which superhero media have you consumed? (Select all that apply)",
+  option = c(
+    "Marvel movies (MCU)"          = "mcu_movies",
+    "DC movies (DCU)"              = "dcu_movies",
+    "Animated series (e.g., X-Men, Batman TAS)" = "animated",
+    "Comic books"                  = "comics",
+    "Video games"                  = "games",
+    "TV shows (e.g., Daredevil, The Flash)" = "tv_shows",
+    "None of the above"            = "none"
+  )
+)
+```
+
+`r sd_nav()`
+
+--- trivia
+
+## Quick Trivia
+
+```{r}
+#| echo: false
+sd_question(
+  type  = "mc",
+  id    = "spiderman_q",
+  label = "What radioactive creature gave Spider-Man his powers?",
+  option = c(
+    "Spider"      = "spider",
+    "Scorpion"    = "scorpion",
+    "Wasp"        = "wasp",
+    "Radioactive Man" = "rad_man"
+  )
+)
+```
+
+```{r}
+#| echo: false
+sd_question(
+  type  = "mc",
+  id    = "batman_q",
+  label = "Which of these is NOT one of Batman's well-known villains?",
+  option = c(
+    "The Joker"    = "joker",
+    "Lex Luthor"   = "lex",
+    "Two-Face"     = "two_face",
+    "The Riddler"  = "riddler"
+  )
+)
+```
+
+```{r}
+#| echo: false
+sd_question(
+  type  = "mc",
+  id    = "avengers_q",
+  label = "Who was the first Avenger, according to the MCU?",
+  option = c(
+    "Iron Man"     = "iron_man",
+    "Captain America" = "cap",
+    "Thor"         = "thor",
+    "Nick Fury"    = "fury"
+  )
+)
+```
+
+`r sd_nav()`
+
+--- preferences
+
+## Your Preferences
+
+```{r}
+#| echo: false
+sd_question(
+  type  = "text",
+  id    = "fav_hero",
+  label = "Who is your all-time favorite superhero?",
+  placeholder = "e.g., Spider-Man, Wonder Woman, Black Panther..."
+)
+```
+
+```{r}
+#| echo: false
+sd_question(
+  type  = "mc_multiple_buttons",
+  id    = "hero_qualities",
+  label = "What qualities do you value most in a superhero? (Select up to 3)",
+  option = c(
+    "Courage"        = "courage",
+    "Intelligence"   = "intelligence",
+    "Humor"          = "humor",
+    "Moral compass"  = "morality",
+    "Raw power"      = "power",
+    "Relatability"   = "relatable",
+    "Sacrifice"      = "sacrifice"
+  )
+)
+```
+
+```{r}
+#| echo: false
+sd_question(
+  type  = "mc",
+  id    = "power_choice",
+  label = "If you could have one superpower, what would it be?",
+  option = c(
+    "Flight"           = "flight",
+    "Super strength"   = "strength",
+    "Telepathy"        = "telepathy",
+    "Time manipulation" = "time",
+    "Invisibility"     = "invisibility",
+    "Healing factor"   = "healing"
+  )
+)
+```
+
+```{r}
+#| echo: false
+sd_question(
+  type  = "slider",
+  id    = "hero_vs_villain",
+  label = "Where do you fall on the hero–villain spectrum?",
+  option = c(
+    "Pure hero"       = "hero",
+    "Mostly heroic"   = "mostly_hero",
+    "Anti-hero"       = "antihero",
+    "Morally grey"    = "grey",
+    "Villain with reasons" = "villain_reasons",
+    "Pure villain"    = "villain"
+  )
+)
+```
+
+`r sd_nav()`
+
+--- followup
+
+## A Bit More...
+
+```{r}
+#| echo: false
+sd_question(
+  type  = "mc",
+  id    = "team_solo",
+  label = "Do you prefer heroes who work alone or as part of a team?",
+  option = c(
+    "Lone wolf"          = "solo",
+    "Team player"        = "team",
+    "Depends on the hero" = "depends"
+  )
+)
+```
+
+```{r}
+#| echo: false
+sd_question(
+  type  = "mc",
+  id    = "origin_pref",
+  label = "Which hero origin story do you find most compelling?",
+  option = c(
+    "Accident / scientific mishap (e.g., Hulk, Spider-Man)" = "accident",
+    "Chosen / destined (e.g., Thor, Captain Marvel)"        = "destined",
+    "Self-made through training/tech (e.g., Batman, Iron Man)" = "self_made",
+    "Born with powers (e.g., Superman, Storm)"              = "born"
+  )
+)
+```
+
+```{r}
+#| echo: false
+sd_question(
+  type  = "textarea",
+  id    = "hero_design",
+  label = "If you could design your own superhero, describe them in a few sentences:",
+  placeholder = "Powers, backstory, costume — let your imagination run wild!",
+  height = "120px"
+)
+```
+
+`r sd_nav()`
+
+--- final
+
+## Almost Done!
+
+```{r}
+#| echo: false
+sd_question(
+  type  = "mc",
+  id    = "recommend",
+  label = "Would you recommend this survey to a fellow superhero fan?",
+  option = c(
+    "Absolutely!"      = "yes",
+    "Maybe"            = "maybe",
+    "Probably not"     = "no"
+  )
+)
+```
+
+```{r}
+#| echo: false
+sd_question(
+  type  = "textarea",
+  id    = "comments",
+  label = "Any other thoughts on superheroes or this survey? (Optional)",
+  placeholder = "Feel free to share anything...",
+  height = "100px"
+)
+```
+
+### Thank you for completing the survey! 🦸‍♀️🦸‍♂️
+
+Your responses help us understand what makes superheroes so beloved. You're a true hero for participating!
+
+`r sd_close(label_close = "Exit Survey")`
