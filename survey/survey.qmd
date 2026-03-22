@@ -1,94 +1,253 @@
 ---
-# The YAML header specifies several settings for the survey but is not required.
-# A full list of settings can be found under _survey/settings.yml directory.
-
-# Use this section to customize theme, progress bar, and footers
 theme-settings:
-  theme: default
-  barposition: top
-  footer-left: "Made with [surveydown](https://surveydown.org)"
-  footer-right: '[<i class="bi bi-github"></i> Source Code](https://github.com/surveydown-dev/template_default)'
-
-# Use this section to customize survey behavior and appearance
+  theme: [superhero, custom.scss]
+  barcolor: "#e74c3c"
 survey-settings:
-  show-previous: false
-  use-cookies: false
-  auto-scroll: false
-  rate-survey: false
-  system-language: en
-  highlight-unanswered: true
-  highlight-color: blue
-  capture-metadata: true
-  all-questions-required: false
-
-# Use this section to customize system messages
-system-messages:
-  warning: Warning Message
-  previous: Previous Page
-  next: Next Page
-  exit: Finish Survey
+  highlight-color: orange
+  required:
+    - has_fav_hero
+    - hero_universe
+    - dream_power
 ---
 
 ```{r}
 library(surveydown)
 ```
 
-
 --- welcome
 
-# Default Template
+# 🦸 Welcome to the Ultimate Superhero Survey! 🦸‍♀️
 
-Welcome to surveydown! This is a default template of a surveydown survey. It has two pages with one question on each page.
+Thank you for participating in our research on superhero preferences and powers! This survey will help us understand what makes superheroes appealing to different people.
 
-Here is a basic "multiple choice" question:
+**This survey should take about 3-5 minutes to complete.**
+
+<br>
 
 ```{r}
 sd_question(
-  type  = 'mc',
-  id    = 'penguins',
-  label = "What's your favorite penguin?",
-  option = c(
-    'Adélie'    = 'adelie',
-    'Chinstrap' = 'chinstrap',
-    'Gentoo'    = 'gentoo'
-  )
+  type  = "mc",
+  id    = "has_fav_hero",
+  label = "Do you have a favorite super hero?",
+  option = c("Yes" = "yes", "No" = "no")
 )
 ```
-
-There are several ways to navigate between pages in a surveydown survey:
-
-1. By default, navigation buttons are auto-created by the end of each survey page.
-2. You can also call `sd_nav()` by the end of a page, which is equivalent to the auto-creation.
-3. `sd_nav()` supports parameters to customize the navigation labels and destinations. For example, on this page, we can call `sd_nav(page_next = "page2", label_next = "Go to Page 2")` to customize the next button label and destination.
-
-```{r}
-sd_nav(page_next = "page2", label_next = "Go to Page 2")
-```
-
---- page2
-
-This is another page in your survey.
-
-{surveydown} supports many types of questions. For example, here is a simple `text` type question:
 
 ```{r}
 sd_question(
   type  = "text",
-  id    = "silly_word",
-  label = "Write a silly word here:"
+  id    = "fav_hero_name",
+  label = "Who is your favorite super hero?"
 )
 ```
 
-On this page, we don't call `sd_nav()` to auto-trigger the navigation button.
+--- hero_details
 
---- end
+# Tell us about your superhero preferences
 
-## End
+```{r}
+sd_question(
+  type  = "mc",
+  id    = "hero_universe",
+  label = "Which superhero universe do you prefer?",
+  option = c(
+    "Marvel (Spider-Man, Iron Man, etc.)" = "marvel",
+    "DC Comics (Batman, Superman, etc.)" = "dc",
+    "Independent/Other" = "other",
+    "I like them all equally" = "all"
+  )
+)
+```
 
-This is the last page in the survey.
+```{r}
+sd_question(
+  type  = "mc_multiple",
+  id    = "hero_qualities",
+  label = "What qualities do you find most appealing in superheroes? (Select all that apply)",
+  option = c(
+    "Super strength" = "strength",
+    "Ability to fly" = "flying",
+    "Intelligence/Strategy" = "intelligence",
+    "Humor/Wit" = "humor",
+    "Moral compass" = "morals",
+    "Cool gadgets/technology" = "gadgets",
+    "Magical powers" = "magic",
+    "Relatability/Human flaws" = "relatable"
+  )
+)
+```
 
-Here we call `sd_close()` to create a finish button to end the survey. When calling `sd_close()`, the auto-navigation is disabled.
+--- powers
+
+# If you could have superpowers...
+
+```{r}
+sd_question(
+  type  = "mc_buttons",
+  id    = "dream_power",
+  label = "If you could have ONE superpower, which would you choose?",
+  option = c(
+    "🕸️ **Web-slinging**<br>Swing through cities" = "webslinging",
+    "🛡️ **Super Strength**<br>Lift anything" = "strength", 
+    "✈️ **Flight**<br>Soar through the skies" = "flight",
+    "🧠 **Telepathy**<br>Read minds" = "telepathy",
+    "⚡ **Super Speed**<br>Faster than lightning" = "speed",
+    "🔮 **Magic**<br>Cast spells" = "magic"
+  ),
+  width = "100%", 
+  direction = "vertical"
+)
+```
+
+```{r}
+sd_question(
+  type  = "slider_numeric",
+  id    = "responsibility_scale",
+  label = "On a scale of 1-10, how much do you agree with Spider-Man's motto: 'With great power comes great responsibility'?",
+  option = 1:10
+)
+```
+
+--- scenarios
+
+# Superhero Scenarios
+
+```{r}
+sd_question(
+  type  = "mc",
+  id    = "villain_encounter",
+  label = "You're walking down the street when you see a supervillain causing chaos. What do you do?",
+  option = c(
+    "Jump in to help immediately" = "help_immediate",
+    "Call for backup first, then help" = "help_backup",
+    "Help evacuate civilians" = "evacuate",
+    "Run away and let the professionals handle it" = "run",
+    "Take photos/videos for social media" = "social_media"
+  )
+)
+```
+
+```{r}
+sd_question(
+  type  = "matrix",
+  id    = "superhero_rating",
+  label = "Rate these classic superheroes:",
+  row = c(
+    "Spider-Man" = "spiderman",
+    "Batman" = "batman", 
+    "Wonder Woman" = "wonder_woman",
+    "Superman" = "superman"
+  ),
+  option = c(
+    "😍 Love" = "love",
+    "👍 Like" = "like", 
+    "😐 Neutral" = "neutral",
+    "👎 Dislike" = "dislike",
+    "🤷 Don't know" = "unknown"
+  )
+)
+```
+
+--- personal
+
+# A bit about you
+
+```{r}
+sd_question(
+  type  = "select",
+  id    = "age_group",
+  label = "What's your age group?",
+  option = c(
+    "Under 18" = "under_18",
+    "18-24" = "18_24",
+    "25-34" = "25_34", 
+    "35-44" = "35_44",
+    "45-54" = "45_54",
+    "55+" = "55_plus"
+  )
+)
+```
+
+```{r}
+sd_question(
+  type  = "mc",
+  id    = "comic_reader",
+  label = "Do you regularly read comic books?",
+  option = c(
+    "Yes, physical comics" = "physical",
+    "Yes, digital comics" = "digital",
+    "Both physical and digital" = "both",
+    "No, but I watch superhero movies/TV" = "movies_only",
+    "No, not really into comics or superhero media" = "not_into"
+  )
+)
+```
+
+```{r}
+sd_question(
+  type  = "numeric",
+  id    = "movies_watched",
+  label = "Approximately how many superhero movies have you watched in the past year?"
+)
+```
+
+--- feedback
+
+# Final thoughts
+
+```{r}
+sd_question(
+  type  = "textarea",
+  id    = "superhero_impact",
+  label = "In your opinion, what positive impact do superheroes have on society and culture?",
+  height = "100px"
+)
+```
+
+```{r}
+sd_question(
+  type  = "mc_multiple_buttons",
+  id    = "survey_topics",
+  label = "What other topics would you be interested in taking surveys about?",
+  option = c(
+    "🎬 Movies & TV" = "entertainment",
+    "🎮 Video Games" = "gaming",
+    "📚 Books & Literature" = "books",
+    "🍕 Food & Cooking" = "food",
+    "🏃 Sports & Fitness" = "sports",
+    "🌍 Travel" = "travel",
+    "💻 Technology" = "tech",
+    "🎵 Music" = "music"
+  ),
+  direction = "vertical",
+  width = "60%"
+)
+```
+
+--- completion
+
+# 🎉 Thank you for completing our Superhero Survey!
+
+Your responses help us understand how people connect with superhero stories and characters.
+
+## What we learned from you:
+
+- Your favorite hero: `r sd_output("fav_hero_name", type = "value")`
+- Your dream superpower: `r sd_output("dream_power", type = "value")`
+- Movies watched this year: `r sd_output("movies_watched", type = "value")`
+
+Your completion code is: **`r sd_output("completion_code", type = "value")`**
+
+*Keep this code for your records.*
 
 ```{r}
 sd_close()
 ```
+
+--- screenout
+
+# Thank you for your interest
+
+We're specifically looking for people who have some interest in superheroes for this survey. 
+
+Thank you for your time!
