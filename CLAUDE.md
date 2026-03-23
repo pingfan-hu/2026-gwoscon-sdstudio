@@ -17,6 +17,8 @@ quarto render     # Build to _site/
 quarto preview    # Live preview with hot reload
 ```
 
+Slides are auto-deployed to GitHub Pages via `.github/workflows/quarto-publish.yml` on every push to `main`.
+
 ---
 
 ## Done Condition
@@ -90,8 +92,9 @@ Self-contained HTML files embedded via `<iframe>` for rich interactive slides. A
 | `studio-responses.html` | Local vs Database two-card comparison |
 | `studio-summary.html` | 3×2 feature grid summary |
 | `studio-closing.html` | surveydown + sdstudio comparison with two stacked sub-cards per side |
-| `surveydown-intro.html` | surveydown + Quarto + Shiny = survey equation (base64 images) |
-| `surveydown-problems.html` | Two-card problem statement (Code-Only, Learning Curve) |
+| `surveydown-intro.html` | surveydown + Quarto + Shiny = survey equation (legacy: uses base64 images) |
+| `surveydown-problem.html` | Two-card problem statement (Code-Only, Learning Curve) |
+| `surveydown-transition.html` | Transition slide between surveydown and sdstudio sections |
 | `surveydown-component.html` | surveydown component overview |
 | `surveydown-features.html` | surveydown feature cards |
 
