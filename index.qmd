@@ -4,7 +4,7 @@
 source("scripts.R")
 ```
 
-## About Me {.center style="font-size: 30px; line-height: 1.5;"}
+## About Me {.light-centered .center style="font-size: 30px; line-height: 1.5;"}
 
 ::: {.columns}
 ::: {.column width="38%"}
@@ -78,7 +78,7 @@ source("scripts.R")
 
 <iframe src="figs/surveydown-intro.html" style="width:100%; height:420px; border:none;"></iframe>
 
-## {style="font-size: 0.7em;"}
+## {style="font-size: 0.7em;" .light-centered .center}
 
 ::: {.column width="48%"}
 

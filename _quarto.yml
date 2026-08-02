@@ -11,9 +11,8 @@ title: "`sdstudio`<br>[A Companion Package for Designing<br>and Managing `survey
 author: "<br>**Pingfan Hu**<br>George Washington University<br><br>GW OSCON 2026"
 
 format:
-  revealjs:
+  touhou-revealjs:
     smaller: false
-    theme: styles/slides.scss
     slide-number: true
     embed-resources: false
     auto-stretch: false
