@@ -16,19 +16,15 @@ format:
     slide-number: true
     embed-resources: false
     auto-stretch: false
-    footer: "<a href='http://pingfanhu.com'>Pingfan Hu</a> - <a href='https://ospo.gwu.edu/open-source-conference-gw-oscon'>GW OSCON 2026</a>"
+    footer: "<a href='http://pingfanhu.com'>Pingfan Hu</a> - <a href='https://ospo.gwu.edu/open-source-conference-2026'>GW OSCON 2026</a>"
     preview-links: auto
     link-external-newwindow: true
     link-external-icon: false
     center-title-slide: true
     code-block-height: 650px
     title-slide-attributes:
-      data-background-image: figs/logo-sdstudio.png
-      data-background-size: 18%
-      data-background-opacity: "1"
-      data-background-position: right 20% center
       class: custom-title-slide
-      style: text-align:left;
+      style: "text-align:left; background-image: url(figs/logo-sdstudio.png); background-size: 25%; background-position: right 7% center;"
 
 execute:
   warning: false
