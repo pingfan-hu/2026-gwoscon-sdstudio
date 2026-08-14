@@ -28,7 +28,7 @@ Thank you for participating in our research on superhero preferences and powers!
 sd_question(
   type  = "mc",
   id    = "has_fav_hero",
-  label = "Do you have a favorite super hero?",
+  label = "Do you have a favorite superhero?",
   option = c("Yes" = "yes", "No" = "no")
 )
 ```
@@ -37,7 +37,7 @@ sd_question(
 sd_question(
   type  = "text",
   id    = "fav_hero_name",
-  label = "Who is your favorite super hero?"
+  label = "Who is your favorite superhero?"
 )
 ```
 

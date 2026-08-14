@@ -1,0 +1,10 @@
+/* Project-specific slide rules. The deck's theme lives in
+   _extensions/touhou/touhou.scss; this file is for rules that only make
+   sense in this deck, loaded via `css:` in _quarto.yml. */
+
+/* Center the About Me heading over the text column only: offset the h2's
+   box by the photo column width (34%) so its centering axis matches the
+   66% text column beside the photo. */
+.reveal #about-me h2 {
+  margin-left: 34%;
+}

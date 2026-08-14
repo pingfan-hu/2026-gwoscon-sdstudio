@@ -12,6 +12,7 @@ author: "<br>**Pingfan Hu**<br>George Washington University<br><br>GW OSCON 2026
 
 format:
   touhou-revealjs:
+    css: styles/slides.css
     smaller: false
     slide-number: true
     embed-resources: false
