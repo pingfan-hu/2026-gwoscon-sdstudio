@@ -39,7 +39,7 @@ library(surveydown)
 sd_question(
   type  = "mc",
   id    = "has_fav_hero",
-  label = "Do you have a favorite superhero?",
+  label = "Do you have a favorite super hero?",
   option = c(
     "Yes" = "yes",
     "No"  = "no"
@@ -99,7 +99,7 @@ question_text <- function(highlights = NULL) {
   text_text <- 'sd_question(
   type  = "text",
   id    = "fav_hero_name",
-  label = "Who is your favorite superhero?"
+  label = "Who is your favorite super hero?"
 )'
 
   cat(fence_start(highlights))
@@ -111,7 +111,7 @@ question_mc <- function(highlights = NULL) {
   mc_text <- 'sd_question(
   type  = "mc",
   id    = "hero_universe",
-  label = "Which superhero universe do you prefer?",
+  label = "Which super hero universe do you prefer?",
   option = c(
     "Marvel"                  = "marvel",
     "DC Comics"               = "dc",
@@ -173,7 +173,7 @@ sd_question(
 sd_question(
   type  = "text",
   id    = "fav_hero",
-  label = "Who is your favorite superhero?"
+  label = "Who is your favorite super hero?"
 )'
 
   cat(fence_start(highlights))

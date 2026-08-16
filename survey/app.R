@@ -11,7 +11,7 @@ server <- function(input, output, session) {
   completion_code <- sd_completion_code(8)
   sd_store_value(completion_code)
 
-  # Conditional skip logic - screen out people with no superhero interest
+  # Conditional skip logic - screen out people with no super hero interest
   sd_skip_if(
     input$has_fav_hero == "no" ~ "screenout"
   )

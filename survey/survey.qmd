@@ -18,7 +18,7 @@ library(surveydown)
 
 # 🦸 Welcome to the Ultimate Superhero Survey! 🦸‍♀️
 
-Thank you for participating in our research on superhero preferences and powers! This survey will help us understand what makes superheroes appealing to different people.
+Thank you for participating in our research on super hero preferences and powers! This survey will help us understand what makes super heroes appealing to different people.
 
 **This survey should take about 3-5 minutes to complete.**
 
@@ -28,7 +28,7 @@ Thank you for participating in our research on superhero preferences and powers!
 sd_question(
   type  = "mc",
   id    = "has_fav_hero",
-  label = "Do you have a favorite superhero?",
+  label = "Do you have a favorite super hero?",
   option = c("Yes" = "yes", "No" = "no")
 )
 ```
@@ -37,19 +37,19 @@ sd_question(
 sd_question(
   type  = "text",
   id    = "fav_hero_name",
-  label = "Who is your favorite superhero?"
+  label = "Who is your favorite super hero?"
 )
 ```
 
 --- hero_details
 
-# Tell us about your superhero preferences
+# Tell us about your super hero preferences
 
 ```{r}
 sd_question(
   type  = "mc",
   id    = "hero_universe",
-  label = "Which superhero universe do you prefer?",
+  label = "Which super hero universe do you prefer?",
   option = c(
     "Marvel (Spider-Man, Iron Man, etc.)" = "marvel",
     "DC Comics (Batman, Superman, etc.)" = "dc",
@@ -63,7 +63,7 @@ sd_question(
 sd_question(
   type  = "mc_multiple",
   id    = "hero_qualities",
-  label = "What qualities do you find most appealing in superheroes? (Select all that apply)",
+  label = "What qualities do you find most appealing in super heroes? (Select all that apply)",
   option = c(
     "Super strength" = "strength",
     "Ability to fly" = "flying",
@@ -131,7 +131,7 @@ sd_question(
 sd_question(
   type  = "matrix",
   id    = "superhero_rating",
-  label = "Rate these classic superheroes:",
+  label = "Rate these classic super heroes:",
   row = c(
     "Spider-Man" = "spiderman",
     "Batman" = "batman", 
@@ -177,8 +177,8 @@ sd_question(
     "Yes, physical comics" = "physical",
     "Yes, digital comics" = "digital",
     "Both physical and digital" = "both",
-    "No, but I watch superhero movies/TV" = "movies_only",
-    "No, not really into comics or superhero media" = "not_into"
+    "No, but I watch super hero movies/TV" = "movies_only",
+    "No, not really into comics or super hero media" = "not_into"
   )
 )
 ```
@@ -187,7 +187,7 @@ sd_question(
 sd_question(
   type  = "numeric",
   id    = "movies_watched",
-  label = "Approximately how many superhero movies have you watched in the past year?"
+  label = "Approximately how many super hero movies have you watched in the past year?"
 )
 ```
 
@@ -199,7 +199,7 @@ sd_question(
 sd_question(
   type  = "textarea",
   id    = "superhero_impact",
-  label = "In your opinion, what positive impact do superheroes have on society and culture?",
+  label = "In your opinion, what positive impact do super heroes have on society and culture?",
   height = "100px"
 )
 ```
@@ -228,7 +228,7 @@ sd_question(
 
 # 🎉 Thank you for completing our Superhero Survey!
 
-Your responses help us understand how people connect with superhero stories and characters.
+Your responses help us understand how people connect with super hero stories and characters.
 
 ## What we learned from you:
 
@@ -248,6 +248,6 @@ sd_close()
 
 # Thank you for your interest
 
-We're specifically looking for people who have some interest in superheroes for this survey. 
+We're specifically looking for people who have some interest in super heroes for this survey. 
 
 Thank you for your time!
