@@ -21,7 +21,7 @@ source("scripts.R")
     3. **Agentic AI Engineering** around Claude Code
   </div>
 
-- For more information, visit [**pingfanhu.com**](http://pingfanhu.com)
+- For more information, visit [**pingfan.org**](https://pingfan.org)
 :::
 :::
 
@@ -273,7 +273,7 @@ surveycode()
 :::
 
 ::: {.img-middle}
-[![](figs/member-pingfan-hu.jpg){width="25%" .round-image .purple-border}](https://pingfanhu.com) Pingfan Hu
+[![](figs/member-pingfan-hu.jpg){width="25%" .round-image .purple-border}](https://pingfan.org) Pingfan Hu
 :::
 
 ::: {.img-middle}
